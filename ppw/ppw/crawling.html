@@ -1,0 +1,2732 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Web Crawling Berita Detik &#8212; Data Mining</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'crawling';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="👋 Hello, I’m Rohman Maulana!" href="intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Data Mining - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Data Mining - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    👋 Hello, I’m Rohman Maulana!
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Web Crawling Berita Detik</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fcrawling.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/crawling.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Web Crawling Berita Detik</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pendahuluan">Pendahuluan</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-library">1. Import Library</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menentukan-http-headers">2. Menentukan HTTP Headers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#membuat-session">3. Membuat Session</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#membuat-fungsi-untuk-mengambil-url-artikel">4. Membuat Fungsi untuk Mengambil URL Artikel</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menentukan-url-kategori-sport">5. Menentukan URL Kategori Sport</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pengujian-pengambilan-url-artikel">6. Pengujian Pengambilan URL Artikel</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#membuat-fungsi-untuk-mengambil-isi-berita">7. Membuat Fungsi untuk Mengambil Isi Berita</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pengujian-pengambilan-isi-berita">8. Pengujian Pengambilan Isi Berita</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#membuat-fungsi-crawling-kategori">9. Membuat Fungsi Crawling Kategori</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menentukan-sumber-data">10. Menentukan Sumber Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#crawling-berita-sport">11. Crawling Berita Sport</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menggabungkan-data">13. Menggabungkan Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menyimpan-dataset-ke-csv">14. Menyimpan Dataset ke CSV</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hasil-crawling">15. Hasil Crawling</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menampilkan-data-hasil-crawling">16. Menampilkan Data Hasil Crawling</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="web-crawling-berita-detik">
+<h1>Web Crawling Berita Detik<a class="headerlink" href="#web-crawling-berita-detik" title="Link to this heading">#</a></h1>
+<section id="pendahuluan">
+<h2>Pendahuluan<a class="headerlink" href="#pendahuluan" title="Link to this heading">#</a></h2>
+<p>Web crawling merupakan proses pengambilan data dari halaman web secara otomatis menggunakan program.</p>
+<p>Pada praktikum ini, proses web crawling dilakukan menggunakan bahasa pemrograman Python untuk mengambil data berita dari situs Detik. Data yang dikumpulkan berasal dari dua kategori berita, yaitu <strong>Sport</strong> dan <strong>Finance</strong>.</p>
+<p>Sumber data yang digunakan adalah:</p>
+<ul class="simple">
+<li><p>Sport: <code class="docutils literal notranslate"><span class="pre">https://sport.detik.com/</span></code></p></li>
+<li><p>Finance: <code class="docutils literal notranslate"><span class="pre">https://finance.detik.com/</span></code></p></li>
+</ul>
+<p>Setiap berita yang berhasil dikumpulkan akan disimpan sebagai dataset dengan tiga atribut, yaitu:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">id</span></code> — nomor identitas data</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">isi_berita</span></code> — isi atau teks berita</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">label</span></code> — kategori berita</p></li>
+</ul>
+<p>Target pengumpulan data adalah <strong>100 berita Sport dan 100 berita Finance</strong>, sehingga diharapkan diperoleh maksimal <strong>200 data berita</strong>.</p>
+<p>Dataset hasil crawling selanjutnya dapat digunakan untuk proses <strong>text preprocessing, text mining, klasifikasi teks, dan machine learning</strong>.</p>
+</section>
+<section id="import-library">
+<h2>1. Import Library<a class="headerlink" href="#import-library" title="Link to this heading">#</a></h2>
+<p>Tahap pertama adalah mengimpor library yang dibutuhkan untuk proses web crawling.</p>
+<p>Library yang digunakan terdiri dari:</p>
+<ul class="simple">
+<li><p><strong>Requests</strong> untuk mengirim HTTP request dan mengambil halaman web.</p></li>
+<li><p><strong>BeautifulSoup</strong> untuk membaca dan memproses struktur HTML.</p></li>
+<li><p><strong>CSV</strong> untuk menyimpan hasil crawling ke dalam file CSV.</p></li>
+<li><p><strong>Time</strong> untuk memberikan jeda antar-request.</p></li>
+<li><p><strong>URLJoin</strong> untuk mengubah URL relatif menjadi URL lengkap.</p></li>
+</ul>
+<p>Pada tahap ini program hanya mempersiapkan library dan belum melakukan proses crawling.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">pip</span> install requests beautifulsoup4
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: requests in c:\users\acer\appdata\local\programs\python\python311\lib\site-packages (2.32.3)
+Requirement already satisfied: beautifulsoup4 in c:\users\acer\appdata\local\programs\python\python311\lib\site-packages (4.13.3)
+Requirement already satisfied: charset-normalizer&lt;4,&gt;=2 in c:\users\acer\appdata\local\programs\python\python311\lib\site-packages (from requests) (3.4.1)
+Requirement already satisfied: idna&lt;4,&gt;=2.5 in c:\users\acer\appdata\local\programs\python\python311\lib\site-packages (from requests) (3.10)
+Requirement already satisfied: urllib3&lt;3,&gt;=1.21.1 in c:\users\acer\appdata\local\programs\python\python311\lib\site-packages (from requests) (2.3.0)
+Requirement already satisfied: certifi&gt;=2017.4.17 in c:\users\acer\appdata\local\programs\python\python311\lib\site-packages (from requests) (2025.1.31)
+Requirement already satisfied: soupsieve&gt;1.2 in c:\users\acer\appdata\local\programs\python\python311\lib\site-packages (from beautifulsoup4) (2.6)
+Requirement already satisfied: typing-extensions&gt;=4.0.0 in c:\users\acer\appdata\local\programs\python\python311\lib\site-packages (from beautifulsoup4) (4.12.2)
+Note: you may need to restart the kernel to use updated packages.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[notice] A new release of pip is available: 24.2 -&gt; 26.2.1
+[notice] To update, run: C:\Users\acer\AppData\Local\Programs\Python\Python311\python.exe -m pip install --upgrade pip
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bs4</span><span class="w"> </span><span class="kn">import</span> <span class="n">BeautifulSoup</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">csv</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">urllib.parse</span><span class="w"> </span><span class="kn">import</span> <span class="n">urljoin</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="menentukan-http-headers">
+<h2>2. Menentukan HTTP Headers<a class="headerlink" href="#menentukan-http-headers" title="Link to this heading">#</a></h2>
+<p>HTTP headers digunakan untuk memberikan informasi tambahan ketika program melakukan request ke sebuah website.</p>
+<p>Pada tahap ini digunakan <code class="docutils literal notranslate"><span class="pre">User-Agent</span></code> yang menyerupai browser. Hal tersebut membuat request memiliki informasi mengenai browser yang digunakan ketika mengakses halaman website.</p>
+<p>Header ini nantinya akan digunakan pada setiap request selama proses crawling.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">HEADERS</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;User-Agent&quot;</span><span class="p">:</span> <span class="p">(</span>
+        <span class="s2">&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) &quot;</span>
+        <span class="s2">&quot;AppleWebKit/537.36 (KHTML, like Gecko) &quot;</span>
+        <span class="s2">&quot;Chrome/131.0.0.0 Safari/537.36&quot;</span>
+    <span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="membuat-session">
+<h2>3. Membuat Session<a class="headerlink" href="#membuat-session" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">requests.Session()</span></code> digunakan untuk membuat session yang dapat digunakan berulang kali selama proses crawling.</p>
+<p>Dengan menggunakan session, konfigurasi seperti <code class="docutils literal notranslate"><span class="pre">User-Agent</span></code> dapat diterapkan pada setiap request secara otomatis. Dengan demikian, kita tidak perlu menuliskan konfigurasi header berulang kali.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">session</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span>
+<span class="n">session</span><span class="o">.</span><span class="n">headers</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">HEADERS</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="membuat-fungsi-untuk-mengambil-url-artikel">
+<h2>4. Membuat Fungsi untuk Mengambil URL Artikel<a class="headerlink" href="#membuat-fungsi-untuk-mengambil-url-artikel" title="Link to this heading">#</a></h2>
+<p>Tahap berikutnya adalah membuat fungsi <code class="docutils literal notranslate"><span class="pre">ambil_url_artikel()</span></code> untuk mencari URL artikel dari halaman kategori berita.</p>
+<p>Fungsi ini akan:</p>
+<ol class="arabic simple">
+<li><p>Membuka halaman kategori berita.</p></li>
+<li><p>Membuka halaman indeks berikutnya jika jumlah artikel belum terpenuhi.</p></li>
+<li><p>Membaca struktur HTML menggunakan BeautifulSoup.</p></li>
+<li><p>Mencari seluruh link pada halaman.</p></li>
+<li><p>Mengambil URL dari atribut <code class="docutils literal notranslate"><span class="pre">href</span></code>.</p></li>
+<li><p>Mengubah URL relatif menjadi URL lengkap.</p></li>
+<li><p>Memastikan URL berasal dari domain yang sesuai.</p></li>
+<li><p>Memastikan URL merupakan URL artikel.</p></li>
+<li><p>Menghindari URL yang sama atau duplikat.</p></li>
+<li><p>Menghentikan proses jika jumlah URL yang dibutuhkan sudah terpenuhi.</p></li>
+</ol>
+<p>Fungsi ini belum akan dijalankan sampai kita memanggilnya pada tahap berikutnya.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">ambil_url_artikel</span><span class="p">(</span><span class="n">url_kategori</span><span class="p">,</span> <span class="n">domain</span><span class="p">,</span> <span class="n">jumlah</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Mengambil URL artikel dari homepage dan</span>
+<span class="sd">    halaman indeks sampai jumlah URL terpenuhi.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Mengambil artikel dari: </span><span class="si">{</span><span class="n">url_kategori</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="n">daftar_url</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">halaman</span> <span class="o">=</span> <span class="mi">1</span>
+
+    <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">daftar_url</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">jumlah</span><span class="p">:</span>
+
+        <span class="k">if</span> <span class="n">halaman</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">url</span> <span class="o">=</span> <span class="n">url_kategori</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">url_kategori</span><span class="o">.</span><span class="n">rstrip</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">/indeks?page=</span><span class="si">{</span><span class="n">halaman</span><span class="si">}</span><span class="s2">&quot;</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Mengambil halaman </span><span class="si">{</span><span class="n">halaman</span><span class="si">}</span><span class="s2">:&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">response</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+                <span class="n">url</span><span class="p">,</span>
+                <span class="n">timeout</span><span class="o">=</span><span class="mi">15</span>
+            <span class="p">)</span>
+
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Status:&quot;</span><span class="p">,</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="p">)</span>
+
+        <span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">RequestException</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Error:&quot;</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span>
+            <span class="n">halaman</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">continue</span>
+
+        <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">!=</span> <span class="mi">200</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Halaman gagal diakses.&quot;</span><span class="p">)</span>
+            <span class="n">halaman</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">continue</span>
+
+        <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span>
+            <span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">,</span>
+            <span class="s2">&quot;html.parser&quot;</span>
+        <span class="p">)</span>
+
+        <span class="n">jumlah_sebelum</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">daftar_url</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">link</span> <span class="ow">in</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="n">href</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+
+            <span class="n">href</span> <span class="o">=</span> <span class="n">link</span><span class="p">[</span><span class="s2">&quot;href&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+
+            <span class="n">href</span> <span class="o">=</span> <span class="n">urljoin</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">href</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="p">(</span>
+                <span class="n">domain</span> <span class="ow">in</span> <span class="n">href</span>
+                <span class="ow">and</span> <span class="s2">&quot;/d-&quot;</span> <span class="ow">in</span> <span class="n">href</span>
+            <span class="p">):</span>
+
+                <span class="n">href</span> <span class="o">=</span> <span class="n">href</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;#&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+                <span class="k">if</span> <span class="n">href</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">daftar_url</span><span class="p">:</span>
+
+                    <span class="n">daftar_url</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">href</span><span class="p">)</span>
+
+                    <span class="nb">print</span><span class="p">(</span>
+                        <span class="sa">f</span><span class="s2">&quot;  [</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">daftar_url</span><span class="p">)</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">jumlah</span><span class="si">}</span><span class="s2">] &quot;</span>
+                        <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">href</span><span class="si">}</span><span class="s2">&quot;</span>
+                    <span class="p">)</span>
+
+                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">daftar_url</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="n">jumlah</span><span class="p">:</span>
+                    <span class="k">break</span>
+
+        <span class="n">jumlah_baru</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">daftar_url</span><span class="p">)</span> <span class="o">-</span> <span class="n">jumlah_sebelum</span>
+
+        <span class="nb">print</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;Artikel baru dari halaman ini: &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">jumlah_baru</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">jumlah_baru</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span>
+                <span class="s2">&quot;Tidak ada artikel baru di halaman ini.&quot;</span>
+            <span class="p">)</span>
+
+        <span class="n">halaman</span> <span class="o">+=</span> <span class="mi">1</span>
+
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">halaman</span> <span class="o">&gt;</span> <span class="mi">30</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Batas halaman tercapai.&quot;</span><span class="p">)</span>
+            <span class="k">break</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">======================================&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span>
+        <span class="sa">f</span><span class="s2">&quot;Total URL </span><span class="si">{</span><span class="n">domain</span><span class="si">}</span><span class="s2">: &quot;</span>
+        <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">daftar_url</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;======================================&quot;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">daftar_url</span><span class="p">[:</span><span class="n">jumlah</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="menentukan-url-kategori-sport">
+<h2>5. Menentukan URL Kategori Sport<a class="headerlink" href="#menentukan-url-kategori-sport" title="Link to this heading">#</a></h2>
+<p>Sebelum menjalankan fungsi crawling, kita menentukan alamat halaman kategori Sport yang akan digunakan sebagai sumber data.</p>
+<p>Pada tahap ini belum dilakukan pengambilan 100 berita. Kita akan melakukan pengujian terlebih dahulu dengan jumlah data yang kecil untuk memastikan fungsi dapat berjalan dengan baik.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sport_url</span> <span class="o">=</span> <span class="s2">&quot;https://sport.detik.com/&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="pengujian-pengambilan-url-artikel">
+<h2>6. Pengujian Pengambilan URL Artikel<a class="headerlink" href="#pengujian-pengambilan-url-artikel" title="Link to this heading">#</a></h2>
+<p>Sebelum melakukan crawling dalam jumlah besar, kita melakukan pengujian terlebih dahulu.</p>
+<p>Pada pengujian ini hanya akan diambil <strong>5 URL artikel</strong> dari kategori Sport.</p>
+<p>Pengujian ini bertujuan untuk memastikan bahwa program dapat mengakses halaman kategori dan menemukan URL artikel dengan benar.</p>
+<p>Jika proses pengujian berhasil, jumlah data nantinya dapat ditingkatkan menjadi 100 artikel.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">url_test</span> <span class="o">=</span> <span class="n">ambil_url_artikel</span><span class="p">(</span>
+    <span class="n">sport_url</span><span class="p">,</span>
+    <span class="s2">&quot;sport.detik.com&quot;</span><span class="p">,</span>
+    <span class="mi">5</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Mengambil artikel dari: https://sport.detik.com/
+
+Mengambil halaman 1:
+https://sport.detik.com/
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Status: 200
+  [1/5] https://sport.detik.com/raket/d-8653585/asian-games-2026-putri-kw-pede-dengan-komposisi-beregu-putri
+  [2/5] https://sport.detik.com/basket/d-8649812/derrick-michael-wujudkan-mimpi-masa-kecil-tampil-di-asian-games-2026
+  [3/5] https://sport.detik.com/moto-gp/d-8652425/dokter-perkirakan-kondisi-lengan-marc-marquez-sekitar-50-persen
+  [4/5] https://sport.detik.com/raket/d-8653493/tekad-alwi-farhan-lampaui-batas-di-asian-games-2026
+  [5/5] https://sport.detik.com/moto-gp/d-8650852/jadwal-motogp-san-marino-2026-misi-marc-marquez-kejar-jorge-martin
+Artikel baru dari halaman ini: 5
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>======================================
+Total URL sport.detik.com: 5
+======================================
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="membuat-fungsi-untuk-mengambil-isi-berita">
+<h2>7. Membuat Fungsi untuk Mengambil Isi Berita<a class="headerlink" href="#membuat-fungsi-untuk-mengambil-isi-berita" title="Link to this heading">#</a></h2>
+<p>Setelah URL artikel berhasil diperoleh, tahap selanjutnya adalah mengambil isi dari setiap halaman artikel.</p>
+<p>Fungsi <code class="docutils literal notranslate"><span class="pre">ambil_isi_berita()</span></code> digunakan untuk membuka halaman artikel dan mencari bagian HTML yang berisi isi berita.</p>
+<p>Program menggunakan beberapa selector sebagai alternatif untuk menemukan bagian artikel.</p>
+<p>Setelah bagian artikel ditemukan, beberapa elemen yang tidak diperlukan akan dihapus, seperti:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">script</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">style</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">iframe</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">img</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">video</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">figure</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">button</span></code></p></li>
+</ul>
+<p>Setelah itu, teks berita diambil dan dirapikan sehingga spasi yang berlebihan dihilangkan.</p>
+<p>Hasil akhirnya berupa teks berita yang dapat digunakan sebagai data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">ambil_isi_berita</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Membuka halaman artikel dan mengambil isi berita.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">try</span><span class="p">:</span>
+
+        <span class="n">response</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+            <span class="n">url</span><span class="p">,</span>
+            <span class="n">timeout</span><span class="o">=</span><span class="mi">15</span>
+        <span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">!=</span> <span class="mi">200</span><span class="p">:</span>
+
+            <span class="nb">print</span><span class="p">(</span>
+                <span class="s2">&quot;Gagal membuka:&quot;</span><span class="p">,</span>
+                <span class="n">response</span><span class="o">.</span><span class="n">status_code</span>
+            <span class="p">)</span>
+
+            <span class="k">return</span> <span class="s2">&quot;&quot;</span>
+
+        <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span>
+            <span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">,</span>
+            <span class="s2">&quot;html.parser&quot;</span>
+        <span class="p">)</span>
+
+        <span class="n">selector_list</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="s2">&quot;.detail__body-text&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;.detail__body&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;div.detail__body-text&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;article&quot;</span>
+        <span class="p">]</span>
+
+        <span class="n">artikel</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="k">for</span> <span class="n">selector</span> <span class="ow">in</span> <span class="n">selector_list</span><span class="p">:</span>
+
+            <span class="n">artikel</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">select_one</span><span class="p">(</span><span class="n">selector</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">artikel</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">break</span>
+
+        <span class="k">if</span> <span class="n">artikel</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s2">&quot;&quot;</span>
+
+        <span class="k">for</span> <span class="n">tag</span> <span class="ow">in</span> <span class="n">artikel</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span>
+            <span class="p">[</span>
+                <span class="s2">&quot;script&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;style&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;iframe&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;img&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;video&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;figure&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;button&quot;</span>
+            <span class="p">]</span>
+        <span class="p">):</span>
+
+            <span class="n">tag</span><span class="o">.</span><span class="n">decompose</span><span class="p">()</span>
+
+        <span class="n">isi</span> <span class="o">=</span> <span class="n">artikel</span><span class="o">.</span><span class="n">get_text</span><span class="p">(</span>
+            <span class="s2">&quot; &quot;</span><span class="p">,</span>
+            <span class="n">strip</span><span class="o">=</span><span class="kc">True</span>
+        <span class="p">)</span>
+
+        <span class="n">isi</span> <span class="o">=</span> <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+            <span class="n">isi</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+        <span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">isi</span>
+
+    <span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">RequestException</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
+
+        <span class="nb">print</span><span class="p">(</span>
+            <span class="s2">&quot;Error:&quot;</span><span class="p">,</span>
+            <span class="n">error</span>
+        <span class="p">)</span>
+
+        <span class="k">return</span> <span class="s2">&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="pengujian-pengambilan-isi-berita">
+<h2>8. Pengujian Pengambilan Isi Berita<a class="headerlink" href="#pengujian-pengambilan-isi-berita" title="Link to this heading">#</a></h2>
+<p>Selanjutnya kita melakukan pengujian terhadap satu URL artikel yang sebelumnya telah ditemukan.</p>
+<p>Tujuannya adalah memastikan bahwa fungsi <code class="docutils literal notranslate"><span class="pre">ambil_isi_berita()</span></code> berhasil menemukan dan mengambil teks dari halaman artikel.</p>
+<p>Jika isi berita berhasil ditampilkan, fungsi tersebut dapat digunakan untuk memproses banyak artikel.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">url_contoh</span> <span class="o">=</span> <span class="n">url_test</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="n">isi_contoh</span> <span class="o">=</span> <span class="n">ambil_isi_berita</span><span class="p">(</span><span class="n">url_contoh</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">isi_contoh</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Jakarta - Putri Kusuma Wardani percaya diri dengan komposisi beregu putri yang dipilih PBSI untuk Asian Games 2026. Dia juga menyebut chemistry satu sama lain sudah klop. Bulutangkis Indonesia mengirimkan 20 wakil untuk tampil di Aichi-Nagoya, 19 September hingga 4 Oktober mendatang. 10 Atlet di antaranya merupakan sektor beregu putri. Yaitu Putri KW, Thalita R. Wiryawan, Ni Kadek Dhinda, Mutiara Ayu Puspitasari, Rachel Allessya Rose, Febi Setianingrum, Febriana Dwipuji Kusuma, Meilysa Trias Puspitasari, Siti Fadia Silva Ramadhanti, dan Nita Violina Marwah. SCROLL TO CONTINUE WITH CONTENT Baca juga: Tekad Alwi Farhan Lampaui Batas di Asian Games 2026 Putri menilai komposisi skuad bulutangkis Indonesia yang mengombinasikan pemain senior dan junior, tidak menemukan kendala dalam membangun koneksi di dalam tim. ADVERTISEMENT Pengalaman berlaga bersama dalam beberapa kejuaraan beregu sebelumnya dinilai telah membentuk kekompakan antar-atlet. &quot;Dengan tim komposisi yang ada cukup kuat sih. Kita juga sudah lumayan dua atau tiga kali beregu bersama-sama, jadi sudah ketemu chemistry-nya di antara satu dan yang lain, baik tunggal maupun ganda,&quot; kata Putri dalam keterangannya dikutip Selasa (8/9/2026). Tak hanya itu, seluruh rangkaian program latihan di Pelatnas sejauh ini berjalan dengan lancar dan kondusif. Sampai menjelang hari keberangkatan menuju Jepang, porsi latihan tim nasional kini lebih difokuskan pada penguatan di masing-masing sektor di bawah arahan tim pelatih. &quot;Yang pasti, kekurangan dari pertandingan sebelumnya menuju pertandingan Asian Games lebih ditingkatkan lagi,&quot; tambahnya. Baca juga: Ini Dia 20 Pebulutangkis Indonesia di Asian Games 2026 Terkait peta persaingan di Asian Games 2026, Putri KW menilai kekuatan di sektor tunggal putri kawasan Asia tergolong sangat merata. Dia mewaspadai kekuatan para pemain dari negara-negara papan atas seperti China, Jepang, dan Korea Selatan. &quot;Kalau kekuatan sendiri di Asian Games menurut aku cukup merata ya dari Asia sendiri, terutama dari China, Jepang, dan Korea Selatan sih cukup kuat,&quot; tuturnya. Pebulutangkis peringkat ke-7 dunia itu memasang target tinggi pada ajang Asian Games 2026. Secara pribadi, Putri berambisi untuk dapat melangkah hingga ke babak akhir dan berdiri di atas podium. Hal ini juga sejalan dengan target medali yang dicanangkan oleh PP PBSI. &quot;Harapannya semoga tim bulu tangkis Indonesia bisa mendapatkan medali, dan terutama untuk pribadi aku sendiri, aku bisa menyumbangkan medali untuk Indonesia di ajang Asian Games,&quot; pungkas Putri. Lihat juga Video; Hong Kong Open 2024: Sabar/Reza dan Putri KW Tumbang di Final [Gambas:Video 20detik] (mcy/aff) ... Tautan telah disalin asian games 2026 putri kusuma wardani pbsi
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="membuat-fungsi-crawling-kategori">
+<h2>9. Membuat Fungsi Crawling Kategori<a class="headerlink" href="#membuat-fungsi-crawling-kategori" title="Link to this heading">#</a></h2>
+<p>Setelah fungsi untuk mengambil URL dan fungsi untuk mengambil isi berita berhasil dibuat dan diuji, kedua fungsi tersebut digunakan dalam satu fungsi utama, yaitu <code class="docutils literal notranslate"><span class="pre">crawling_kategori()</span></code>.</p>
+<p>Fungsi ini bertugas melakukan crawling pada satu kategori berita.</p>
+<p>Prosesnya adalah:</p>
+<ol class="arabic simple">
+<li><p>Mengambil URL artikel.</p></li>
+<li><p>Membuka setiap URL artikel.</p></li>
+<li><p>Mengambil isi berita.</p></li>
+<li><p>Menyimpan isi berita.</p></li>
+<li><p>Memberikan label sesuai kategori.</p></li>
+<li><p>Memberikan jeda antar-request.</p></li>
+<li><p>Menghentikan proses ketika jumlah data valid telah mencapai target.</p></li>
+</ol>
+<p>Setiap data akan memiliki struktur:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>isi_berita → isi teks berita
+label      → kategori berita
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 19. Code Cell — Fungsi Crawling</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">crawling_kategori</span><span class="p">(</span>
+    <span class="n">url_kategori</span><span class="p">,</span>
+    <span class="n">domain</span><span class="p">,</span>
+    <span class="n">label</span><span class="p">,</span>
+    <span class="n">jumlah</span><span class="o">=</span><span class="mi">100</span>
+<span class="p">):</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">======================================&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;CRAWLING </span><span class="si">{</span><span class="n">label</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Target:&quot;</span><span class="p">,</span> <span class="n">jumlah</span><span class="p">,</span> <span class="s2">&quot;berita&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;======================================&quot;</span><span class="p">)</span>
+
+    <span class="n">urls</span> <span class="o">=</span> <span class="n">ambil_url_artikel</span><span class="p">(</span>
+        <span class="n">url_kategori</span><span class="p">,</span>
+        <span class="n">domain</span><span class="p">,</span>
+        <span class="n">jumlah</span>
+    <span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span>
+        <span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">URL yang akan diproses: &quot;</span>
+        <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">urls</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="p">)</span>
+
+    <span class="n">data</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">url</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span>
+        <span class="n">urls</span><span class="p">,</span>
+        <span class="n">start</span><span class="o">=</span><span class="mi">1</span>
+    <span class="p">):</span>
+
+        <span class="nb">print</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">[</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">urls</span><span class="p">)</span><span class="si">}</span><span class="s2">] &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;Mengambil berita </span><span class="si">{</span><span class="n">label</span><span class="si">}</span><span class="s2">...&quot;</span>
+        <span class="p">)</span>
+
+        <span class="n">isi</span> <span class="o">=</span> <span class="n">ambil_isi_berita</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">isi</span><span class="p">:</span>
+
+            <span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+                <span class="s2">&quot;isi_berita&quot;</span><span class="p">:</span> <span class="n">isi</span><span class="p">,</span>
+                <span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="n">label</span>
+            <span class="p">})</span>
+
+            <span class="nb">print</span><span class="p">(</span>
+                <span class="s2">&quot;✓ Berhasil | &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">isi</span><span class="p">)</span><span class="si">}</span><span class="s2"> karakter&quot;</span>
+            <span class="p">)</span>
+
+        <span class="k">else</span><span class="p">:</span>
+
+            <span class="nb">print</span><span class="p">(</span>
+                <span class="s2">&quot;✗ Isi berita tidak ditemukan&quot;</span>
+            <span class="p">)</span>
+
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="n">jumlah</span><span class="p">:</span>
+            <span class="k">break</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">======================================&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span>
+        <span class="sa">f</span><span class="s2">&quot;Berita </span><span class="si">{</span><span class="n">label</span><span class="si">}</span><span class="s2"> berhasil: &quot;</span>
+        <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;======================================&quot;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">data</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="menentukan-sumber-data">
+<h2>10. Menentukan Sumber Data<a class="headerlink" href="#menentukan-sumber-data" title="Link to this heading">#</a></h2>
+<p>Pada tahap ini kita menentukan dua kategori berita yang akan digunakan sebagai sumber dataset.</p>
+<p>Kategori pertama adalah <strong>Sport</strong>, sedangkan kategori kedua adalah <strong>Finance</strong>.</p>
+<p>Kedua kategori akan diproses secara terpisah agar setiap berita dapat diberikan label yang sesuai.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sport_url</span> <span class="o">=</span> <span class="s2">&quot;https://sport.detik.com/&quot;</span>
+<span class="n">finance_url</span> <span class="o">=</span> <span class="s2">&quot;https://finance.detik.com/&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="crawling-berita-sport">
+<h2>11. Crawling Berita Sport<a class="headerlink" href="#crawling-berita-sport" title="Link to this heading">#</a></h2>
+<p>Pada tahap ini kita mulai melakukan crawling terhadap kategori <strong>Sport</strong>.</p>
+<p>Program akan mengambil URL artikel dan kemudian mengambil isi dari setiap artikel.</p>
+<p>Untuk pengujian awal, kita menggunakan target <strong>5 berita</strong> terlebih dahulu.</p>
+<p>Jika proses berjalan dengan baik, target dapat diubah menjadi <strong>100 berita</strong>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_sport</span> <span class="o">=</span> <span class="n">crawling_kategori</span><span class="p">(</span>
+    <span class="n">sport_url</span><span class="p">,</span>
+    <span class="s2">&quot;sport.detik.com&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;sport&quot;</span><span class="p">,</span>
+    <span class="mi">5</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>======================================
+CRAWLING SPORT
+Target: 5 berita
+======================================
+
+Mengambil artikel dari: https://sport.detik.com/
+
+Mengambil halaman 1:
+https://sport.detik.com/
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Status: 200
+  [1/5] https://sport.detik.com/raket/d-8653585/asian-games-2026-putri-kw-pede-dengan-komposisi-beregu-putri
+  [2/5] https://sport.detik.com/basket/d-8649812/derrick-michael-wujudkan-mimpi-masa-kecil-tampil-di-asian-games-2026
+  [3/5] https://sport.detik.com/moto-gp/d-8652425/dokter-perkirakan-kondisi-lengan-marc-marquez-sekitar-50-persen
+  [4/5] https://sport.detik.com/raket/d-8653493/tekad-alwi-farhan-lampaui-batas-di-asian-games-2026
+  [5/5] https://sport.detik.com/moto-gp/d-8650852/jadwal-motogp-san-marino-2026-misi-marc-marquez-kejar-jorge-martin
+Artikel baru dari halaman ini: 5
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>======================================
+Total URL sport.detik.com: 5
+======================================
+
+URL yang akan diproses: 5
+
+[1/5] Mengambil berita sport...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>✓ Berhasil | 2720 karakter
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2/5] Mengambil berita sport...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>✓ Berhasil | 2749 karakter
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[3/5] Mengambil berita sport...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>✓ Berhasil | 2191 karakter
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[4/5] Mengambil berita sport...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>✓ Berhasil | 2239 karakter
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[5/5] Mengambil berita sport...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>✓ Berhasil | 3619 karakter
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>======================================
+Berita sport berhasil: 5
+======================================
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_finance</span> <span class="o">=</span> <span class="n">crawling_kategori</span><span class="p">(</span>
+    <span class="n">finance_url</span><span class="p">,</span>
+    <span class="s2">&quot;finance.detik.com&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;finance&quot;</span><span class="p">,</span>
+    <span class="mi">5</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>======================================
+CRAWLING FINANCE
+Target: 5 berita
+======================================
+
+Mengambil artikel dari: https://finance.detik.com/
+
+Mengambil halaman 1:
+https://finance.detik.com/
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Status: 200
+  [1/5] https://finance.detik.com/berita-ekonomi-bisnis/d-8653106/bandara-soetta-husein-dibuka-lagi-radin-inten-masih-ditutup
+  [2/5] https://finance.detik.com/berita-ekonomi-bisnis/d-8652990/pramono-mau-terbitkan-obligasi-purbaya-kalau-uangnya-banyak-buat-apa-utang
+  [3/5] https://finance.detik.com/moneter/d-8652973/muncul-isu-gaji-asn-dipindah-ke-bank-bumn-purbaya-buka-suara
+  [4/5] https://finance.detik.com/energi/d-8652949/terindikasi-isi-bbm-berulang-5-000-nomor-polisi-kendaraan-diajukan-blokir
+  [5/5] https://finance.detik.com/berita-ekonomi-bisnis/d-8652862/7-bandara-ditutup-hingga-23-59-wib-ini-daftarnya
+Artikel baru dari halaman ini: 5
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>======================================
+Total URL finance.detik.com: 5
+======================================
+
+URL yang akan diproses: 5
+
+[1/5] Mengambil berita finance...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>✓ Berhasil | 2459 karakter
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2/5] Mengambil berita finance...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>✓ Berhasil | 2758 karakter
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[3/5] Mengambil berita finance...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>✓ Berhasil | 2137 karakter
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[4/5] Mengambil berita finance...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>✓ Berhasil | 4664 karakter
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[5/5] Mengambil berita finance...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>✓ Berhasil | 2588 karakter
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>======================================
+Berita finance berhasil: 5
+======================================
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_sport</span> <span class="o">=</span> <span class="n">crawling_kategori</span><span class="p">(</span>
+    <span class="n">sport_url</span><span class="p">,</span>
+    <span class="s2">&quot;sport.detik.com&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;sport&quot;</span><span class="p">,</span>
+    <span class="mi">100</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>======================================
+CRAWLING SPORT
+Target: 100 berita
+======================================
+
+Mengambil artikel dari: https://sport.detik.com/
+
+Mengambil halaman 1:
+https://sport.detik.com/
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Status: 200
+  [1/100] https://sport.detik.com/raket/d-8653585/asian-games-2026-putri-kw-pede-dengan-komposisi-beregu-putri
+  [2/100] https://sport.detik.com/basket/d-8649812/derrick-michael-wujudkan-mimpi-masa-kecil-tampil-di-asian-games-2026
+  [3/100] https://sport.detik.com/moto-gp/d-8652425/dokter-perkirakan-kondisi-lengan-marc-marquez-sekitar-50-persen
+  [4/100] https://sport.detik.com/raket/d-8653493/tekad-alwi-farhan-lampaui-batas-di-asian-games-2026
+  [5/100] https://sport.detik.com/moto-gp/d-8650852/jadwal-motogp-san-marino-2026-misi-marc-marquez-kejar-jorge-martin
+  [6/100] https://sport.detik.com/sport-lain/d-8654342/menuju-asian-games-2026-ketum-koi-tekankan-kolaborasi
+  [7/100] https://sport.detik.com/sport-lain/d-8649149/timnas-voli-putra-dan-putri-indonesia-bidik-8-besar-asian-games-2026
+  [8/100] https://sport.detik.com/sport-lain/d-8648160/pemanasan-timnas-basket-3x3-di-taiwan-jelang-asian-games-2026
+  [9/100] https://sport.detik.com/sepakbola/uefa/d-8654326/liga-champions-inter-tersingkir-terlalu-awal-musim-lalu
+  [10/100] https://sport.detik.com/sport-lain/d-8654586/ihr-2026-perluas-olahraga-pacuan-kuda-indonesia
+  [11/100] https://sport.detik.com/sepakbola/liga-indonesia/d-8654262/thailand-nggak-akan-tiru-naturalisasi-yang-dilakukan-vietnam
+  [12/100] https://sport.detik.com/sepakbola/liga-inggris/d-8654327/arsenal-makin-pede-main-cantik
+  [13/100] https://sport.detik.com/sepakbola/uefa/d-8654322/4-debutan-liga-champions-langsung-diuji-para-raksasa-eropa
+  [14/100] https://sport.detik.com/sepakbola/bola-dunia/d-8654511/daftar-nominasi-ballon-dor-2026-rilis-ada-nama-messi
+  [15/100] https://sport.detik.com/sepakbola/liga-inggris/d-8654323/ederson-angkat-bicara-soal-batal-gabung-ke-mu
+  [16/100] https://sport.detik.com/sepakbola/uefa/d-8654330/pesan-haaland-buat-pesepakbola-muda-senyum-jangan-overthinking-jika-gagal
+  [17/100] https://sport.detik.com/sepakbola/uefa/d-8654243/lautaro-martinez-kylian-mbappe-salah-satu-striker-terbaik
+  [18/100] https://sport.detik.com/sepakbola/bola-dunia/d-8654437/daftar-nominasi-kopa-trophy-2026-cubarsi-yamal-kandidat-terkuat
+  [19/100] https://sport.detik.com/sepakbola/uefa/d-8654258/madrid-vs-inter-vinicius-bersiap-hadapi-pertahanan-solid-si-ular
+  [20/100] https://sport.detik.com/sepakbola/bola-dunia/d-8654411/nominasi-yashin-trophy-2026-vozinha-masuk-tak-ada-donnarumma
+  [21/100] https://sport.detik.com/sepakbola/bola-dunia/d-8654386/daftar-nominasi-klub-dan-pelatih-terbaik-ballon-dor-2026
+  [22/100] https://sport.detik.com/sepakbola/uefa/d-8653413/arsenal-bawa-rekor-apik-ke-markas-napoli-9-musim-tak-kalah-di-laga-pembuka
+  [23/100] https://sport.detik.com/sepakbola/uefa/d-8653417/misi-menang-man-city-diadang-kandang-kukuh-porto
+  [24/100] https://sport.detik.com/sepakbola/uefa/d-8654241/madrid-vs-inter-zamorano-prediksikan-laga-sulit-untuk-los-blancos
+  [25/100] https://sport.detik.com/sepakbola/liga-indonesia/d-8654321/sty-harap-persija-dapat-izin-hadapi-persib-di-jakarta
+  [26/100] https://sport.detik.com/raket/d-8654261/nova-widianto-mulai-tangani-ganda-campuran-pelatnas-pbsi
+  [27/100] https://sport.detik.com/sepakbola/liga-indonesia/d-8654236/nestapa-vietnam-gagal-lolos-piala-asia-u-20-2027-sampai-degradasi
+  [28/100] https://sport.detik.com/sepakbola/uefa/d-8653668/madrid-vs-inter-mourinho-tepikan-nostalgia-selama-90-menit
+  [29/100] https://sport.detik.com/basket/d-8654249/timnas-basket-jadi-gelombang-pertama-datang-ke-asian-games-2026
+  [30/100] https://sport.detik.com/sepakbola/liga-spanyol/d-8653678/aubameyang-hidup-lagi
+  [31/100] https://sport.detik.com/sepakbola/uefa/d-8653679/6-data-fakta-madrid-vs-inter-dominasi-el-real
+  [32/100] https://sport.detik.com/sepakbola/foto-sepakbola/d-8653662/chelsea-dan-sakit-tahunan
+  [33/100] https://sport.detik.com/sepakbola/uefa/d-8653676/prediksi-supercomputer-real-madrid-vs-inter-los-blancos-favorit-kuat
+  [34/100] https://sport.detik.com/sepakbola/liga-jerman/d-8653419/harry-kane-ingin-punya-karier-seawet-messi-dan-ronaldo
+  [35/100] https://sport.detik.com/sepakbola/liga-inggris/d-8653673/ada-apa-dengan-garnacho
+  [36/100] https://sport.detik.com/sepakbola/liga-spanyol/d-8653683/madrid-masih-adaptasi-dengan-gaya-main-mourinho
+  [37/100] https://sport.detik.com/sepakbola/uefa/d-8653659/isak-lagi-panas-kini-kejar-gol-perdana-bersama-liverpool-di-liga-champions
+  [38/100] https://sport.detik.com/sportstyle/d-8653975/nikmati-keseruan-lari-di-solo-run-fest-2026-beli-tiketnya-via-brimo
+  [39/100] https://sport.detik.com/sepakbola/uefa/d-8653661/mourinho-heran-inter-milan-belum-juara-liga-champions-lagi
+  [40/100] https://sport.detik.com/sepakbola/liga-spanyol/d-8653680/respons-pedas-mbappe-soal-dinilai-kurang-membantu-pertahanan-madrid
+  [41/100] https://sport.detik.com/sepakbola/uefa/d-8653671/mu-comeback-ke-liga-champions-mainkan-laga-ke-300-lawan-klub-debutan
+  [42/100] https://sport.detik.com/sepakbola/uefa/d-8653502/madrid-vs-inter-buruknya-rekor-nerazzurri-di-tanah-spanyol
+  [43/100] https://sport.detik.com/basket/d-8653694/timnas-basket-putra-di-asian-games-2026-menangi-laga-pertama-dulu
+  [44/100] https://sport.detik.com/sepakbola/liga-inggris/d-8653503/apa-benar-liverpool-incar-calvin-verdonk
+  [45/100] https://sport.detik.com/sepakbola/uefa/d-8653499/prediksi-liga-champions-city-dortmund-madrid-dijagokan-menang-nanti-malam
+  [46/100] https://sport.detik.com/sepakbola/liga-indonesia/d-8653687/persib-pinjamkan-saddil-ramdani-ke-persebaya
+  [47/100] https://sport.detik.com/sepakbola/liga-indonesia/d-8653656/panpel-persija-masih-tunggu-izin-kepolisian-untuk-laga-vs-persib-di-gbk
+  [48/100] https://sport.detik.com/sepakbola/uefa/d-8653416/head-to-head-madrid-vs-inter-milan-los-blancos-bagus-lawan-tim-italia
+  [49/100] https://sport.detik.com/sepakbola/liga-indonesia/d-8653569/piala-asia-u-20-timnas-indonesia-u-20-masuk-pot-berapa
+  [50/100] https://sport.detik.com/sepakbola/uefa/d-8653404/kans-erling-haaland-ukir-rekor-baru-di-liga-champions
+  [51/100] https://sport.detik.com/sepakbola/bola-dunia/d-8653399/bruno-fernandes-masuk-nominasi-ballon-dor-2026
+  [52/100] https://sport.detik.com/sepakbola/uefa/d-8653402/jadwal-liga-champions-malam-ini-real-madrid-vs-inter-man-city-juga-main
+Artikel baru dari halaman ini: 52
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Mengambil halaman 2:
+https://sport.detik.com/indeks?page=2
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Status: 200
+  [53/100] https://sport.detik.com/f1/d-8651436/hasil-f1-gp-italia-2026-kimi-antonelli-menang-mercedes-1-2
+  [54/100] https://sport.detik.com/sport-lain/d-8651374/wec-2026-sean-gelael-balapan-di-austin-dini-hari-start-p7
+  [55/100] https://sport.detik.com/moto-gp/d-8651046/ktm-suka-antusiasme-luca-marini
+  [56/100] https://sport.detik.com/moto-gp/d-8650870/crutchlow-pilih-ai-ogura-jadi-favorit-setelah-marc-marquez-ini-alasannya
+  [57/100] https://sport.detik.com/sport-lain/d-8650342/wec-2026-wrt-32-meraba-cota-dari-hasil-free-practice
+  [58/100] https://sport.detik.com/raket/d-8650339/mens-world-tennis-championship-rafalentino-ethan-gagal-juara
+  [59/100] https://sport.detik.com/sportstyle/d-8650215/minala-cup-padel-diikuti-lebih-dari-300-peserta
+  [60/100] https://sport.detik.com/sport-lain/d-8650061/lewat-buku-eks-judoka-tuang-buah-pikiran-untuk-kemajuan-olahraga-nasional
+  [61/100] https://sport.detik.com/basket/d-8649778/asian-games-2026-timnas-basket-masuk-grup-neraka-cdm-optimistis
+  [62/100] https://sport.detik.com/sport-lain/d-8649669/kalah-di-perempatfinal-avc-beach-continental-ini-kata-bintang-sofyan
+  [63/100] https://sport.detik.com/sport-lain/d-8649199/wec-2026-paruh-kedua-musim-dimulai-team-wrt-32-lebih-pede
+  [64/100] https://sport.detik.com/raket/d-8649186/mens-world-tennis-championship-ganda-indonesia-tembus-final
+  [65/100] https://sport.detik.com/sport-lain/d-8649165/bali-bakal-gelar-turnamen-catur-internasional-akhir-oktober
+  [66/100] https://sport.detik.com/fotosport/d-8648227/kyrchyn-gorge-jadi-panggung-world-nomad-games
+  [67/100] https://sport.detik.com/raket/d-8649124/hasil-china-masters-2026-sabar-reza-out-wakil-indonesia-habis
+  [68/100] https://sport.detik.com/moto-gp/d-8648849/pol-acosta-akan-menang-balapan-dan-jadi-juara-dunia-cuma-soal-waktu
+  [69/100] https://sport.detik.com/sport-lain/d-8648336/avc-continental-2026-bintang-sofyan-hadapi-selandia-baru-di-16-besar
+Artikel baru dari halaman ini: 17
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Mengambil halaman 3:
+https://sport.detik.com/indeks?page=3
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Status: 200
+  [70/100] https://sport.detik.com/sportstyle/d-8647385/belum-pernah-ikut-kelas-yoga-yoga-outdoor-ini-cocok-untuk-beginner
+  [71/100] https://sport.detik.com/raket/d-8647457/mens-world-tennis-championship-nathan-barki-ke-perempatfinal
+  [72/100] https://sport.detik.com/sportstyle/d-8647394/bakal-ada-jakarta-vertical-run-2026-bulan-november
+  [73/100] https://sport.detik.com/raket/d-8647441/hasil-china-masters-2026-sabar-reza-menang-melaju-ke-perempatfinal
+  [74/100] https://sport.detik.com/sport-lain/d-8647346/dki-jakarta-gelar-pon-pantai-2026-bulan-november
+  [75/100] https://sport.detik.com/moto-gp/d-8647200/marc-marquez-makin-dekat-jorge-martin-akan-lawan
+  [76/100] https://sport.detik.com/moto-gp/d-8646970/gelar-juara-motogp-2026-jadi-ujian-ketahanan-marc-marquez
+  [77/100] https://sport.detik.com/raket/d-8647100/hasil-china-masters-2026-leo-daniel-kena-comeback-keok-di-16-besar
+  [78/100] https://sport.detik.com/sport-lain/d-8646915/kolaborasi-dengan-npc-kemenpora-genjot-pembinaan-atlet-disabilitas
+  [79/100] https://sport.detik.com/sport-lain/d-8646269/jalan-panjang-bilal-hasan-menuju-titel-ufc
+  [80/100] https://sport.detik.com/raket/d-8646249/hasil-china-masters-2026-jojo-terhenti-di-babak-kedua
+  [81/100] https://sport.detik.com/sportstyle/d-8645952/spesialnya-jakarta-international-10k-tahun-ini
+  [82/100] https://sport.detik.com/raket/d-8645946/mens-world-tennis-championship-rafalentino-dan-anthony-ke-babak-kedua
+  [83/100] https://sport.detik.com/g-sport/d-8645920/atlet-bukan-satu-satunya-kunci-kemajuan-olahraga-nasional
+  [84/100] https://sport.detik.com/moto-gp/d-8645850/agar-motogp-indonesia-2026-sukses-di-dalam-dan-luar-lintasan
+  [85/100] https://sport.detik.com/moto-gp/d-8645527/motogp-2026-aprilia-kian-termotivasi-kalahkan-marc-marquez
+  [86/100] https://sport.detik.com/raket/d-8645423/hasil-china-masters-2026-sabar-reza-menang-dua-gim-langsung
+  [87/100] https://sport.detik.com/moto-gp/d-8644946/francesco-bagnaia-di-titik-terendah
+  [88/100] https://sport.detik.com/raket/d-8644579/ini-dia-20-pebulutangkis-indonesia-di-asian-games-2026
+Artikel baru dari halaman ini: 19
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Mengambil halaman 4:
+https://sport.detik.com/indeks?page=4
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Status: 200
+  [89/100] https://sport.detik.com/sport-lain/d-8644322/ketum-koni-pusat-sambut-positif-kejuaraan-pacu-kuda-di-aceh
+  [90/100] https://sport.detik.com/sport-lain/d-8644288/pordasi-akan-optimalkan-lapangan-h-m-hasan-gayo-untuk-olahraga-berkuda
+  [91/100] https://sport.detik.com/sportstyle/d-8644207/mangkuluhur-cup-ketika-golf-bukan-lagi-sekadar-olahraga
+  [92/100] https://sport.detik.com/raket/d-8644222/mens-world-tennis-championship-nathan-barki-lolos-ke-babak-kedua
+  [93/100] https://sport.detik.com/moto-gp/d-8643938/kampiun-motogp-2026-bukan-yang-paling-banyak-menang-tapi-paling-tenang
+  [94/100] https://sport.detik.com/moto-gp/d-8644045/motogp-aragon-selesai-ini-nama-pemenang-bold-riders-podium-picks
+  [95/100] https://sport.detik.com/moto-gp/d-8643813/moto3-veda-ega-sudah-empat-kali-gagal-raih-poin
+  [96/100] https://sport.detik.com/moto-gp/d-8643612/marc-marquez-beri-pukulan-untuk-rider-rider-aprilia
+  [97/100] https://sport.detik.com/raket/d-8643860/china-masters-2026-singkirkan-unggulan-1-leo-daniel-ke-16-besar
+  [98/100] https://sport.detik.com/moto-gp/d-8643496/bagnaia-kena-mental-bos-ducati-ada-masalah-fokus
+  [99/100] https://sport.detik.com/sport-lain/d-8643405/abdul-kadir-karding-jadi-ketum-perbasasi-singgung-pembinaan-dan-prestasi
+  [100/100] https://sport.detik.com/sport-lain/d-8643113/bukan-pukulan-hoki-yang-runtuhkan-umar-nurmagomedov
+Artikel baru dari halaman ini: 12
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>======================================
+Total URL sport.detik.com: 100
+======================================
+
+URL yang akan diproses: 100
+
+[1/100] Mengambil berita sport...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>✓ Berhasil | 2720 karakter
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2/100] Mengambil berita sport...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>✓ Berhasil | 2749 karakter
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[3/100] Mengambil berita sport...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>✓ Berhasil | 2191 karakter
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[4/100] Mengambil berita sport...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>✓ Berhasil | 2239 karakter
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[5/100] Mengambil berita sport...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>✓ Berhasil | 3619 karakter
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[6/100] Mengambil berita sport...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>✓ Berhasil | 2503 karakter
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[7/100] Mengambil berita sport...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>✓ Berhasil | 2332 karakter
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[8/100] Mengambil berita sport...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>✓ Berhasil | 3004 karakter
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[9/100] Mengambil berita sport...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>✓ Berhasil | 1608 karakter
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[10/100] Mengambil berita sport...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>✓ Berhasil | 3235 karakter
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[11/100] Mengambil berita sport...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>✓ Berhasil | 1557 karakter
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[12/100] Mengambil berita sport...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>✓ Berhasil | 2194 karakter
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[13/100] Mengambil berita sport...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>✓ Berhasil | 4587 karakter
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[14/100] Mengambil berita sport...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>✓ Berhasil | 2948 karakter
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[15/100] Mengambil berita sport...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>✓ Berhasil | 1400 karakter
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[16/100] Mengambil berita sport...
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">14</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">data_sport</span> <span class="o">=</span> <span class="n">crawling_kategori</span><span class="p">(</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="n">sport_url</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="s2">&quot;sport.detik.com&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="s2">&quot;sport&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="mi">100</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="p">)</span>
+
+<span class="nn">Cell In[10], line 38,</span> in <span class="ni">crawling_kategori</span><span class="nt">(url_kategori, domain, label, jumlah)</span>
+<span class="g g-Whitespace">     </span><span class="mi">28</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">url</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">29</span>     <span class="n">urls</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">30</span>     <span class="n">start</span><span class="o">=</span><span class="mi">1</span>
+<span class="g g-Whitespace">     </span><span class="mi">31</span> <span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">33</span>     <span class="nb">print</span><span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">34</span>         <span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">[</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">urls</span><span class="p">)</span><span class="si">}</span><span class="s2">] &quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">35</span>         <span class="sa">f</span><span class="s2">&quot;Mengambil berita </span><span class="si">{</span><span class="n">label</span><span class="si">}</span><span class="s2">...&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">36</span>     <span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">38</span>     <span class="n">isi</span> <span class="o">=</span> <span class="n">ambil_isi_berita</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">40</span>     <span class="k">if</span> <span class="n">isi</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">42</span>         <span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+<span class="g g-Whitespace">     </span><span class="mi">43</span>             <span class="s2">&quot;isi_berita&quot;</span><span class="p">:</span> <span class="n">isi</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">44</span>             <span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="n">label</span>
+<span class="g g-Whitespace">     </span><span class="mi">45</span>         <span class="p">})</span>
+
+<span class="nn">Cell In[8], line 8,</span> in <span class="ni">ambil_isi_berita</span><span class="nt">(url)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span><span class="sd"> Membuka halaman artikel dan mengambil isi berita.</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span><span class="sd"> &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">----&gt; </span><span class="mi">8</span>     <span class="n">response</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span>         <span class="n">url</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span>         <span class="n">timeout</span><span class="o">=</span><span class="mi">15</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span>     <span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span>     <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">!=</span> <span class="mi">200</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">15</span>         <span class="nb">print</span><span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">16</span>             <span class="s2">&quot;Gagal membuka:&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">17</span>             <span class="n">response</span><span class="o">.</span><span class="n">status_code</span>
+<span class="g g-Whitespace">     </span><span class="mi">18</span>         <span class="p">)</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\sessions.py:602,</span> in <span class="ni">Session.get</span><span class="nt">(self, url, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">594</span><span class="w"> </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;Sends a GET request. Returns :class:`Response` object.</span>
+<span class="g g-Whitespace">    </span><span class="mi">595</span><span class="sd"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">596</span><span class="sd"> :param url: URL for the new :class:`Request` object.</span>
+<span class="g g-Whitespace">    </span><span class="mi">597</span><span class="sd"> :param \*\*kwargs: Optional arguments that ``request`` takes.</span>
+<span class="g g-Whitespace">    </span><span class="mi">598</span><span class="sd"> :rtype: requests.Response</span>
+<span class="g g-Whitespace">    </span><span class="mi">599</span><span class="sd"> &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">601</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s2">&quot;allow_redirects&quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">602</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s2">&quot;GET&quot;</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\sessions.py:589,</span> in <span class="ni">Session.request</span><span class="nt">(self, method, url, params, data, headers, cookies, files, auth, timeout, allow_redirects, proxies, hooks, stream, verify, cert, json)</span>
+<span class="g g-Whitespace">    </span><span class="mi">584</span> <span class="n">send_kwargs</span> <span class="o">=</span> <span class="p">{</span>
+<span class="g g-Whitespace">    </span><span class="mi">585</span>     <span class="s2">&quot;timeout&quot;</span><span class="p">:</span> <span class="n">timeout</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">586</span>     <span class="s2">&quot;allow_redirects&quot;</span><span class="p">:</span> <span class="n">allow_redirects</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">587</span> <span class="p">}</span>
+<span class="g g-Whitespace">    </span><span class="mi">588</span> <span class="n">send_kwargs</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">settings</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">589</span> <span class="n">resp</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">prep</span><span class="p">,</span> <span class="o">**</span><span class="n">send_kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">591</span> <span class="k">return</span> <span class="n">resp</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\sessions.py:703,</span> in <span class="ni">Session.send</span><span class="nt">(self, request, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">700</span> <span class="n">start</span> <span class="o">=</span> <span class="n">preferred_clock</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">702</span> <span class="c1"># Send the request</span>
+<span class="ne">--&gt; </span><span class="mi">703</span> <span class="n">r</span> <span class="o">=</span> <span class="n">adapter</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">705</span> <span class="c1"># Total elapsed time of the request (approximately)</span>
+<span class="g g-Whitespace">    </span><span class="mi">706</span> <span class="n">elapsed</span> <span class="o">=</span> <span class="n">preferred_clock</span><span class="p">()</span> <span class="o">-</span> <span class="n">start</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\adapters.py:667,</span> in <span class="ni">HTTPAdapter.send</span><span class="nt">(self, request, stream, timeout, verify, cert, proxies)</span>
+<span class="g g-Whitespace">    </span><span class="mi">664</span>     <span class="n">timeout</span> <span class="o">=</span> <span class="n">TimeoutSauce</span><span class="p">(</span><span class="n">connect</span><span class="o">=</span><span class="n">timeout</span><span class="p">,</span> <span class="n">read</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">666</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">667</span>     <span class="n">resp</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">668</span>         <span class="n">method</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">method</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">669</span>         <span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">670</span>         <span class="n">body</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">body</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">671</span>         <span class="n">headers</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">headers</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">672</span>         <span class="n">redirect</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">673</span>         <span class="n">assert_same_host</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">674</span>         <span class="n">preload_content</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">675</span>         <span class="n">decode_content</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">676</span>         <span class="n">retries</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">max_retries</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">677</span>         <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">678</span>         <span class="n">chunked</span><span class="o">=</span><span class="n">chunked</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">679</span>     <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">681</span> <span class="k">except</span> <span class="p">(</span><span class="n">ProtocolError</span><span class="p">,</span> <span class="ne">OSError</span><span class="p">)</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">682</span>     <span class="k">raise</span> <span class="ne">ConnectionError</span><span class="p">(</span><span class="n">err</span><span class="p">,</span> <span class="n">request</span><span class="o">=</span><span class="n">request</span><span class="p">)</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connectionpool.py:787,</span> in <span class="ni">HTTPConnectionPool.urlopen</span><span class="nt">(self, method, url, body, headers, retries, redirect, assert_same_host, timeout, pool_timeout, release_conn, chunked, body_pos, preload_content, decode_content, **response_kw)</span>
+<span class="g g-Whitespace">    </span><span class="mi">784</span> <span class="n">response_conn</span> <span class="o">=</span> <span class="n">conn</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">release_conn</span> <span class="k">else</span> <span class="kc">None</span>
+<span class="g g-Whitespace">    </span><span class="mi">786</span> <span class="c1"># Make the request on the HTTPConnection object</span>
+<span class="ne">--&gt; </span><span class="mi">787</span> <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_request</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">788</span>     <span class="n">conn</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">789</span>     <span class="n">method</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">790</span>     <span class="n">url</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">791</span>     <span class="n">timeout</span><span class="o">=</span><span class="n">timeout_obj</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">792</span>     <span class="n">body</span><span class="o">=</span><span class="n">body</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">793</span>     <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">794</span>     <span class="n">chunked</span><span class="o">=</span><span class="n">chunked</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">795</span>     <span class="n">retries</span><span class="o">=</span><span class="n">retries</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">796</span>     <span class="n">response_conn</span><span class="o">=</span><span class="n">response_conn</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">797</span>     <span class="n">preload_content</span><span class="o">=</span><span class="n">preload_content</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">798</span>     <span class="n">decode_content</span><span class="o">=</span><span class="n">decode_content</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">799</span>     <span class="o">**</span><span class="n">response_kw</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">800</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">802</span> <span class="c1"># Everything went great!</span>
+<span class="g g-Whitespace">    </span><span class="mi">803</span> <span class="n">clean_exit</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connectionpool.py:534,</span> in <span class="ni">HTTPConnectionPool._make_request</span><span class="nt">(self, conn, method, url, body, headers, retries, timeout, chunked, response_conn, preload_content, decode_content, enforce_content_length)</span>
+<span class="g g-Whitespace">    </span><span class="mi">532</span> <span class="c1"># Receive the response from the server</span>
+<span class="g g-Whitespace">    </span><span class="mi">533</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">534</span>     <span class="n">response</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">getresponse</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">535</span> <span class="k">except</span> <span class="p">(</span><span class="n">BaseSSLError</span><span class="p">,</span> <span class="ne">OSError</span><span class="p">)</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">536</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_raise_timeout</span><span class="p">(</span><span class="n">err</span><span class="o">=</span><span class="n">e</span><span class="p">,</span> <span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span> <span class="n">timeout_value</span><span class="o">=</span><span class="n">read_timeout</span><span class="p">)</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connection.py:516,</span> in <span class="ni">HTTPConnection.getresponse</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">513</span> <span class="n">_shutdown</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">sock</span><span class="p">,</span> <span class="s2">&quot;shutdown&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">515</span> <span class="c1"># Get the response from http.client.HTTPConnection</span>
+<span class="ne">--&gt; </span><span class="mi">516</span> <span class="n">httplib_response</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">getresponse</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">518</span> <span class="k">try</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">519</span>     <span class="n">assert_header_parsing</span><span class="p">(</span><span class="n">httplib_response</span><span class="o">.</span><span class="n">msg</span><span class="p">)</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python311\Lib\http\client.py:1378,</span> in <span class="ni">HTTPConnection.getresponse</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1376</span> <span class="k">try</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1377</span>     <span class="k">try</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1378</span>         <span class="n">response</span><span class="o">.</span><span class="n">begin</span><span class="p">()</span>
+<span class="g g-Whitespace">   </span><span class="mi">1379</span>     <span class="k">except</span> <span class="ne">ConnectionError</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1380</span>         <span class="bp">self</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python311\Lib\http\client.py:318,</span> in <span class="ni">HTTPResponse.begin</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">316</span> <span class="c1"># read until we get a non-100 response</span>
+<span class="g g-Whitespace">    </span><span class="mi">317</span> <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">318</span>     <span class="n">version</span><span class="p">,</span> <span class="n">status</span><span class="p">,</span> <span class="n">reason</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_read_status</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">319</span>     <span class="k">if</span> <span class="n">status</span> <span class="o">!=</span> <span class="n">CONTINUE</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">320</span>         <span class="k">break</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python311\Lib\http\client.py:279,</span> in <span class="ni">HTTPResponse._read_status</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">278</span> <span class="k">def</span><span class="w"> </span><span class="nf">_read_status</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">279</span>     <span class="n">line</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fp</span><span class="o">.</span><span class="n">readline</span><span class="p">(</span><span class="n">_MAXLINE</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="s2">&quot;iso-8859-1&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">280</span>     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">line</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">_MAXLINE</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">281</span>         <span class="k">raise</span> <span class="n">LineTooLong</span><span class="p">(</span><span class="s2">&quot;status line&quot;</span><span class="p">)</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python311\Lib\socket.py:706,</span> in <span class="ni">SocketIO.readinto</span><span class="nt">(self, b)</span>
+<span class="g g-Whitespace">    </span><span class="mi">704</span> <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">705</span>     <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">706</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sock</span><span class="o">.</span><span class="n">recv_into</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">707</span>     <span class="k">except</span> <span class="n">timeout</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">708</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_timeout_occurred</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python311\Lib\ssl.py:1311,</span> in <span class="ni">SSLSocket.recv_into</span><span class="nt">(self, buffer, nbytes, flags)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1307</span>     <span class="k">if</span> <span class="n">flags</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1308</span>         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1309</span>           <span class="s2">&quot;non-zero flags not allowed in calls to recv_into() on </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span>
+<span class="g g-Whitespace">   </span><span class="mi">1310</span>           <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1311</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">nbytes</span><span class="p">,</span> <span class="n">buffer</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1312</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1313</span>     <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">recv_into</span><span class="p">(</span><span class="n">buffer</span><span class="p">,</span> <span class="n">nbytes</span><span class="p">,</span> <span class="n">flags</span><span class="p">)</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python311\Lib\ssl.py:1167,</span> in <span class="ni">SSLSocket.read</span><span class="nt">(self, len, buffer)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1165</span> <span class="k">try</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1166</span>     <span class="k">if</span> <span class="n">buffer</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1167</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sslobj</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="nb">len</span><span class="p">,</span> <span class="n">buffer</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1168</span>     <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1169</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sslobj</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="nb">len</span><span class="p">)</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_finance</span> <span class="o">=</span> <span class="n">crawling_kategori</span><span class="p">(</span>
+    <span class="n">finance_url</span><span class="p">,</span>
+    <span class="s2">&quot;finance.detik.com&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;finance&quot;</span><span class="p">,</span>
+    <span class="mi">100</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>======================================
+CRAWLING FINANCE
+Target: 100 berita
+======================================
+
+Mengambil artikel dari: https://finance.detik.com/
+
+Mengambil halaman 1:
+https://finance.detik.com/
+Status: 200
+  [1/100] https://finance.detik.com/berita-ekonomi-bisnis/d-8653106/bandara-soetta-husein-dibuka-lagi-radin-inten-masih-ditutup
+  [2/100] https://finance.detik.com/berita-ekonomi-bisnis/d-8652990/pramono-mau-terbitkan-obligasi-purbaya-kalau-uangnya-banyak-buat-apa-utang
+  [3/100] https://finance.detik.com/moneter/d-8652973/muncul-isu-gaji-asn-dipindah-ke-bank-bumn-purbaya-buka-suara
+  [4/100] https://finance.detik.com/energi/d-8652949/terindikasi-isi-bbm-berulang-5-000-nomor-polisi-kendaraan-diajukan-blokir
+  [5/100] https://finance.detik.com/berita-ekonomi-bisnis/d-8652862/7-bandara-ditutup-hingga-23-59-wib-ini-daftarnya
+  [6/100] https://finance.detik.com/infrastruktur/d-8654568/513-9-km-listrik-aliran-atas-krl-jabodetabek-dirawat-ini-prosesnya
+  [7/100] https://finance.detik.com/infrastruktur/d-8640936/154-gardu-perlintasan-sebidang-dibangun-buat-cegah-kecelakaan
+  [8/100] https://finance.detik.com/infrastruktur/d-8633294/kai-poles-stasiun-cikampek-begini-hasilnya
+  [9/100] https://finance.detik.com/berita-ekonomi-bisnis/d-8654602/masih-bingung-kelola-arus-kas-bisnis-jasamu-ikut-program-ini-solusinya
+  [10/100] https://finance.detik.com/energi/d-8654538/sampah-kini-disulap-jadi-bensin-dan-solar
+  [11/100] https://finance.detik.com/berita-ekonomi-bisnis/d-8654509/sudah-lulus-brevet-pajak-ab-saatnya-lanjut-brevet-c-untuk-cv-lebih-kuat
+  [12/100] https://finance.detik.com/berita-ekonomi-bisnis/d-8654502/perusahaan-multinasional-butuh-staf-paham-pajak-lintas-negara-belajar-di-sini
+  [13/100] https://finance.detik.com/berita-ekonomi-bisnis/d-8654488/purbaya-terjunkan-anak-buah-awasi-ketat-dapur-mbg
+  [14/100] https://finance.detik.com/berita-ekonomi-bisnis/d-8654444/pemda-bisa-pinjam-ke-smi-bayarnya-pakai-dbh
+  [15/100] https://finance.detik.com/moneter/d-8654414/purbaya-sebut-bank-ri-siap-pungut-pajak-transaksi-digital-luar-negeri
+  [16/100] https://finance.detik.com/berita-ekonomi-bisnis/d-8654391/7-rekomendasi-jasa-forwarder-import-barang-dari-china-ke-indonesia
+  [17/100] https://finance.detik.com/berita-ekonomi-bisnis/d-7390719/kisah-pilot-helikopter-banting-setir-jadi-pebisnis-teh
+  [18/100] https://finance.detik.com/berita-ekonomi-bisnis/d-7320371/panen-cuan-layanan-sayang-anabul
+  [19/100] https://finance.detik.com/berita-ekonomi-bisnis/d-7319355/menangkis-serangan-hoaks-tarik-duit-dari-bank
+  [20/100] https://finance.detik.com/solusiukm/d-7309999/bisnis-kura-kura-darat-yang-bikin-dompet-gemuk
+  [21/100] https://finance.detik.com/berita-ekonomi-bisnis/d-7278891/mendulang-kasih-dan-rupiah-di-hari-raya-lewat-hampers
+  [22/100] https://finance.detik.com/berita-ekonomi-bisnis/d-7229486/ide-bisnis-lilin-aromaterapi-dari-rumah-cetak-omzet-ratusan-juta
+  [23/100] https://finance.detik.com/detiktv/d-7135571/rahasia-bisnis-batik-kekinian-omzet-ratusan-juta
+  [24/100] https://finance.detik.com/berita-ekonomi-bisnis/d-7134723/rahasia-bisnis-batik-kekinian-beromzet-ratusan-juta-rupiah
+  [25/100] https://finance.detik.com/berita-ekonomi-bisnis/d-7113302/belatung-pendulang-cuan-puluhan-juta-rupiah
+  [26/100] https://finance.detik.com/moneter/d-8654381/ungkap-pemda-punya-rp-100-triliun-nganggur-purbaya-ingatkan-tak-perlu-minjam
+  [27/100] https://finance.detik.com/berita-ekonomi-bisnis/d-8654336/graha-merah-putih-akan-disewa-bgn-bos-telkom-hadirkan-peluang-bisnis-baru
+  [28/100] https://finance.detik.com/moneter/d-8654356/penerima-bansos-bakal-dibuatkan-rekening-bank
+  [29/100] https://finance.detik.com/berita-ekonomi-bisnis/d-8654315/telkomproperty-ungkap-pemanfaatan-graha-merah-putih-oleh-bgn-masih-negosiasi
+  [30/100] https://finance.detik.com/berita-ekonomi-bisnis/d-8654240/harga-masker-mahal-imbas-abu-anak-krakatau-pengawasan-mesti-diperketat
+  [31/100] https://finance.detik.com/energi/d-8654238/pertamina-waspada-solar-subsidi-bocor-selisih-harga-tembus-rp-18-200
+  [32/100] https://finance.detik.com/berita-ekonomi-bisnis/d-8654233/tiktok-tokopedia-buka-suara-soal-kabar-blokir-tahan-saldo-seller
+  [33/100] https://finance.detik.com/berita-ekonomi-bisnis/d-8654222/purbaya-ngaku-tak-pusingkan-anggaran-bgn-tahun-ini-tak-sampai-rp-200-t
+  [34/100] https://finance.detik.com/bursa-dan-valas/d-8654139/ihsg-ditutup-menguat-1-ke-6-686
+  [35/100] https://finance.detik.com/berita-ekonomi-bisnis/d-8654113/soal-usulan-nunggak-pajak-jadi-landasan-perampasan-aset-purbaya-bilang-gini
+  [36/100] https://finance.detik.com/energi/d-8654088/bensin-campur-etanol-20-ditargetkan-jalan-2028
+  [37/100] https://finance.detik.com/energi/d-8654068/terungkap-1-juta-ton-nikel-tak-bertuan-di-sulteng-bakal-dilelang
+  [38/100] https://finance.detik.com/infrastruktur/d-8654044/purbaya-buka-bukaan-utang-whoosh-cicilan-rp-1-t-tenor-80-tahun
+  [39/100] https://finance.detik.com/foto-bisnis/d-8653603/halim-kembali-beroperasi-mobilitas-penumpang-kembali-bergeliat
+  [40/100] https://finance.detik.com/energi/d-8654009/b50-ri-bikin-jepang-malaysia-eropa-penasaran-ada-potensi-hemat-rp-170-t
+  [41/100] https://finance.detik.com/berita-ekonomi-bisnis/d-8653993/bandara-soetta-sempat-ditutup-barang-ekspor-impor-rp-3-t-mandek
+  [42/100] https://finance.detik.com/moneter/d-8653966/purbaya-klaim-as-tiru-ri-pindahkan-sal-ke-bank-kita-pinteran-sedikit-lah
+  [43/100] https://finance.detik.com/berita-ekonomi-bisnis/d-8653958/30-barang-rampasan-negara-nggak-laku-dilelang-ini-penyebabnya
+  [44/100] https://finance.detik.com/energi/d-8653920/b50-sudah-menyebar-ke-6-050-spbu-tinggal-362-masih-transisi
+  [45/100] https://finance.detik.com/berita-ekonomi-bisnis/d-8653903/purbaya-cerita-omong-gede-hingga-dicap-sombong-klaim-buat-kerek-ekonomi
+  [46/100] https://finance.detik.com/berita-ekonomi-bisnis/d-8653857/pengusaha-truk-sebut-aturan-zero-odol-belum-siap-di-2027-ini-alasannya
+  [47/100] https://finance.detik.com/berita-ekonomi-bisnis/d-8653829/negara-kantongi-rp-26-triliun-dari-aset-rampasan
+  [48/100] https://finance.detik.com/berita-ekonomi-bisnis/d-8653781/purbaya-setahun-jadi-menkeu-berat-badan-turun-sebut-ri-keluar-dari-kutukan-5
+  [49/100] https://finance.detik.com/berita-ekonomi-bisnis/d-8653765/pengusaha-pertashop-minta-bisa-ikut-jual-pertalite
+  [50/100] https://finance.detik.com/berita-ekonomi-bisnis/d-8653752/bantuan-beras-lanjut-hingga-desember-bulog-jamin-pasokan-cukup
+  [51/100] https://finance.detik.com/berita-ekonomi-bisnis/d-8645888/purbaya-siapkan-rp-40-t-bayar-utang-kopdes-ke-bank-bumn-jamin-tak-macet
+  [52/100] https://finance.detik.com/berita-ekonomi-bisnis/d-8645801/angka-kemiskinan-berbeda-dengan-versi-bank-dunia-bps-buka-suara
+  [53/100] https://finance.detik.com/energi/d-8647759/pertamina-batalkan-rencana-beli-bbm-subsidi-tunjukkan-stnk
+Artikel baru dari halaman ini: 53
+
+Mengambil halaman 2:
+https://finance.detik.com/indeks?page=2
+Status: 200
+  [54/100] https://finance.detik.com/moneter/d-8654026/jurus-bank-perkuat-likuiditas-bikin-pertumbuhan-bisnis-tetap-sehat
+  [55/100] https://finance.detik.com/bursa-dan-valas/d-8654017/emiten-ratu-dapat-restu-terbitkan-271-juta-saham-baru
+  [56/100] https://finance.detik.com/infrastruktur/d-8653955/70-negara-kumpul-di-kek-kura-kura-bali-bahas-ai-hingga-investasi
+  [57/100] https://finance.detik.com/berita-ekonomi-bisnis/d-8653800/peran-pengusaha-dalam-ekonomi-nasional-didorong-makin-diperkuat
+Artikel baru dari halaman ini: 4
+
+Mengambil halaman 3:
+https://finance.detik.com/indeks?page=3
+Status: 200
+  [58/100] https://finance.detik.com/foto-bisnis/d-8653254/kapal-logistik-tetap-beroperasi-distribusi-ke-sebesi-dan-sebuku-berjalan-normal
+  [59/100] https://finance.detik.com/berita-ekonomi-bisnis/d-8653722/perkuat-customer-experience-tugu-insurance-raih-2-penghargaan-nasional
+  [60/100] https://finance.detik.com/energi/d-8653695/pertashop-terancam-tutup-penjualan-pertamax-anjlok-dari-400-jadi-100-liter
+  [61/100] https://finance.detik.com/berita-ekonomi-bisnis/d-8653651/harga-masker-di-pasar-pramuka-sudah-naik-2-kali-lipat
+  [62/100] https://finance.detik.com/bursa-dan-valas/d-8653649/ihsg-bergerak-menguat-asing-borong-saham-bbca-bbri
+  [63/100] https://finance.detik.com/berita-ekonomi-bisnis/d-8653611/harga-emas-diramal-naik-ke-rp-3-juta-lagi-ini-perkiraan-waktunya
+  [64/100] https://finance.detik.com/berita-ekonomi-bisnis/d-8653574/puan-soroti-lahan-bekas-karhutla-jadi-kebun-sawit-harus-segera-diselidiki
+  [65/100] https://finance.detik.com/berita-ekonomi-bisnis/d-8653551/ada-demam-masker-di-pasar-pramuka-pembeli-borong-20-box-sekaligus
+  [66/100] https://finance.detik.com/berita-ekonomi-bisnis/d-8653536/harga-emas-terus-anjlok-2-kabar-ini-jadi-biang-keroknya
+  [67/100] https://finance.detik.com/berita-ekonomi-bisnis/d-8653520/puan-soal-anggaran-mitigasi-bencana-ditambah-manfaatnya-harus-lebih-baik
+  [68/100] https://finance.detik.com/berita-ekonomi-bisnis/d-8653500/8-bandara-terdampak-abu-vulkanik-anak-krakatau-kembali-operasi
+  [69/100] https://finance.detik.com/bursa-dan-valas/d-8653498/morgan-stanley-borong-saham-goto-lagi
+  [70/100] https://finance.detik.com/energi/d-8653496/ada-wacana-badan-geologi-bmkg-digabung-puan-bilang-begini
+  [71/100] https://finance.detik.com/berita-ekonomi-bisnis/d-8653432/kapal-eks-kri-ki-hajar-dewantara-bakal-dilelang-rp-370-m
+  [72/100] https://finance.detik.com/foto-bisnis/d-8653328/perawatan-rangkaian-diperketat-17-perjalanan-krl-bogor-line-dibatalkan
+  [73/100] https://finance.detik.com/berita-ekonomi-bisnis/d-8653351/airlangga-sebut-bencana-bikin-ekonomi-kontraksi-di-daerah-terdampak
+  [74/100] https://finance.detik.com/berita-ekonomi-bisnis/d-8653345/putri-mahkota-swedia-datangi-lombok-ada-apa
+  [75/100] https://finance.detik.com/energi/d-8653341/investasi-energi-bersih-ri-naik-turun-esdm-ungkap-apa-yang-terjadi
+  [76/100] https://finance.detik.com/berita-ekonomi-bisnis/d-8653337/dorong-kapasitas-ekspor-lpei-kemenkeu-resmikan-48-desa-devisa-di-babel
+Artikel baru dari halaman ini: 19
+
+Mengambil halaman 4:
+https://finance.detik.com/indeks?page=4
+Status: 200
+  [77/100] https://finance.detik.com/berita-ekonomi-bisnis/d-8653305/arahan-prabowo-bantuan-beras-lanjut-sampai-desember
+  [78/100] https://finance.detik.com/berita-ekonomi-bisnis/d-8653266/harga-emas-antam-hari-ini-jatuh
+  [79/100] https://finance.detik.com/bursa-dan-valas/d-8653232/ihsg-dibuka-menguat-ke-6-639
+  [80/100] https://finance.detik.com/bursa-dan-valas/d-8653229/dolar-as-hari-ini-menguat-ke-rp-17-646
+  [81/100] https://finance.detik.com/berita-ekonomi-bisnis/d-8652409/dari-rp-2-41-t-jadi-rp-8-51-t-mengintip-pertumbuhan-pupuk-indonesia
+  [82/100] https://finance.detik.com/foto-bisnis/d-8652806/khawatir-abu-vulkanik-warga-pilih-cuci-pakaian-di-laundry-koin
+  [83/100] https://finance.detik.com/bursa-dan-valas/d-8653192/simak-rekomendasi-saham-saat-ihsg-loyo
+  [84/100] https://finance.detik.com/berita-ekonomi-bisnis/d-8653186/17-perjalanan-krl-dibatalkan-imbas-perawatan-armada-buatan-inka
+  [85/100] https://finance.detik.com/bursa-dan-valas/d-8653180/transisi-bisnis-tbs-energi-toba-jadi-saham-hijau-pertama-bei
+  [86/100] https://finance.detik.com/berita-ekonomi-bisnis/d-8653167/kemenhub-ungkap-biang-kerok-kemacetan-panjang-pelabuhan-ketapang
+  [87/100] https://finance.detik.com/berita-ekonomi-bisnis/d-8653139/bandara-soetta-husein-siap-beroperasi-lagi-usai-dibuka
+  [88/100] https://finance.detik.com/moneter/d-8653044/pinjaman-online-warga-ri-makin-banyak-tembus-rp-105-triliun
+  [89/100] https://finance.detik.com/berita-ekonomi-bisnis/d-8653127/3-bandara-masih-ditutup-hingga-pukul-10-00-wib-ini-daftarnya
+  [90/100] https://finance.detik.com/foto-bisnis/d-8652670/aktivitas-jual-beli-pasar-agung-depok-tetap-ramai-di-tengah-sebaran-abu-vulkanik
+  [91/100] https://finance.detik.com/berita-ekonomi-bisnis/d-8652992/alasan-buruh-minta-upah-naik-9-tahun-depan
+  [92/100] https://finance.detik.com/berita-ekonomi-bisnis/d-8653036/tok-dpr-setujui-pagu-anggaran-kemenkeu-2027-rp-49-8-triliun
+  [93/100] https://finance.detik.com/moneter/d-8653020/bos-danantara-jamin-kredit-bank-bumn-ke-kopdes-merah-putih-tak-akan-macet
+  [94/100] https://finance.detik.com/moneter/d-8653006/prabowo-ingin-semua-warga-ri-punya-rekening-bank-kasih-tugas-ke-bri-bsi
+Artikel baru dari halaman ini: 18
+
+Mengambil halaman 5:
+https://finance.detik.com/indeks?page=5
+Status: 200
+  [95/100] https://finance.detik.com/foto-bisnis/d-8652682/5-bandara-beroperasi-24-jam-usai-erupsi-anak-krakatau
+  [96/100] https://finance.detik.com/foto-bisnis/d-8652179/warga-angke-terima-bantuan-beras-30-kg-jatah-untuk-tiga-bulan
+  [97/100] https://finance.detik.com/berita-ekonomi-bisnis/d-8652940/purbaya-siap-gelontorkan-dana-bencana-minta-hitungan-jangan-ngaco
+  [98/100] https://finance.detik.com/infrastruktur/d-8652920/purbaya-siap-bayar-utang-kereta-cepat-uangnya-sudah-ada
+  [99/100] https://finance.detik.com/foto-bisnis/d-8652281/bandara-ditutup-imbas-abu-vulkanik-kai-tambah-perjalanan-kereta-dari-jakarta
+  [100/100] https://finance.detik.com/berita-ekonomi-bisnis/d-8652879/menhub-ungkap-alasan-penutupan-7-bandara-diperpanjang
+Artikel baru dari halaman ini: 6
+
+======================================
+Total URL finance.detik.com: 100
+======================================
+
+URL yang akan diproses: 100
+
+[1/100] Mengambil berita finance...
+✓ Berhasil | 2459 karakter
+
+[2/100] Mengambil berita finance...
+✓ Berhasil | 2758 karakter
+
+[3/100] Mengambil berita finance...
+✓ Berhasil | 2137 karakter
+
+[4/100] Mengambil berita finance...
+✓ Berhasil | 4664 karakter
+
+[5/100] Mengambil berita finance...
+✓ Berhasil | 2588 karakter
+
+[6/100] Mengambil berita finance...
+✓ Berhasil | 3097 karakter
+
+[7/100] Mengambil berita finance...
+✓ Berhasil | 3799 karakter
+
+[8/100] Mengambil berita finance...
+✓ Berhasil | 3067 karakter
+
+[9/100] Mengambil berita finance...
+✓ Berhasil | 1906 karakter
+
+[10/100] Mengambil berita finance...
+✓ Berhasil | 3901 karakter
+
+[11/100] Mengambil berita finance...
+✓ Berhasil | 2089 karakter
+
+[12/100] Mengambil berita finance...
+✓ Berhasil | 2139 karakter
+
+[13/100] Mengambil berita finance...
+✓ Berhasil | 1982 karakter
+
+[14/100] Mengambil berita finance...
+✓ Berhasil | 1575 karakter
+
+[15/100] Mengambil berita finance...
+✓ Berhasil | 1684 karakter
+
+[16/100] Mengambil berita finance...
+✓ Berhasil | 5977 karakter
+
+[17/100] Mengambil berita finance...
+✓ Berhasil | 1280 karakter
+
+[18/100] Mengambil berita finance...
+✓ Berhasil | 1126 karakter
+
+[19/100] Mengambil berita finance...
+✓ Berhasil | 1042 karakter
+
+[20/100] Mengambil berita finance...
+✓ Berhasil | 7013 karakter
+
+[21/100] Mengambil berita finance...
+✓ Berhasil | 1148 karakter
+
+[22/100] Mengambil berita finance...
+✓ Berhasil | 1293 karakter
+
+[23/100] Mengambil berita finance...
+✓ Berhasil | 526 karakter
+
+[24/100] Mengambil berita finance...
+✓ Berhasil | 980 karakter
+
+[25/100] Mengambil berita finance...
+✓ Berhasil | 946 karakter
+
+[26/100] Mengambil berita finance...
+✓ Berhasil | 2659 karakter
+
+[27/100] Mengambil berita finance...
+✓ Berhasil | 2851 karakter
+
+[28/100] Mengambil berita finance...
+✓ Berhasil | 2214 karakter
+
+[29/100] Mengambil berita finance...
+✓ Berhasil | 2210 karakter
+
+[30/100] Mengambil berita finance...
+✓ Berhasil | 2405 karakter
+
+[31/100] Mengambil berita finance...
+✓ Berhasil | 1845 karakter
+
+[32/100] Mengambil berita finance...
+✓ Berhasil | 3391 karakter
+
+[33/100] Mengambil berita finance...
+✓ Berhasil | 2120 karakter
+
+[34/100] Mengambil berita finance...
+✓ Berhasil | 1163 karakter
+
+[35/100] Mengambil berita finance...
+✓ Berhasil | 2526 karakter
+
+[36/100] Mengambil berita finance...
+✓ Berhasil | 2591 karakter
+
+[37/100] Mengambil berita finance...
+✓ Berhasil | 2388 karakter
+
+[38/100] Mengambil berita finance...
+✓ Berhasil | 2902 karakter
+
+[39/100] Mengambil berita finance...
+✓ Berhasil | 151 karakter
+
+[40/100] Mengambil berita finance...
+✓ Berhasil | 3215 karakter
+
+[41/100] Mengambil berita finance...
+✓ Berhasil | 3600 karakter
+
+[42/100] Mengambil berita finance...
+✓ Berhasil | 2552 karakter
+
+[43/100] Mengambil berita finance...
+✓ Berhasil | 2902 karakter
+
+[44/100] Mengambil berita finance...
+✓ Berhasil | 2137 karakter
+
+[45/100] Mengambil berita finance...
+✓ Berhasil | 2503 karakter
+
+[46/100] Mengambil berita finance...
+✓ Berhasil | 3027 karakter
+
+[47/100] Mengambil berita finance...
+✓ Berhasil | 2512 karakter
+
+[48/100] Mengambil berita finance...
+✓ Berhasil | 2148 karakter
+
+[49/100] Mengambil berita finance...
+✓ Berhasil | 2381 karakter
+
+[50/100] Mengambil berita finance...
+✓ Berhasil | 3052 karakter
+
+[51/100] Mengambil berita finance...
+✓ Berhasil | 1622 karakter
+
+[52/100] Mengambil berita finance...
+✓ Berhasil | 4337 karakter
+
+[53/100] Mengambil berita finance...
+✓ Berhasil | 2393 karakter
+
+[54/100] Mengambil berita finance...
+✓ Berhasil | 2019 karakter
+
+[55/100] Mengambil berita finance...
+✓ Berhasil | 1965 karakter
+
+[56/100] Mengambil berita finance...
+✓ Berhasil | 4760 karakter
+
+[57/100] Mengambil berita finance...
+✓ Berhasil | 3196 karakter
+
+[58/100] Mengambil berita finance...
+✓ Berhasil | 170 karakter
+
+[59/100] Mengambil berita finance...
+✓ Berhasil | 2819 karakter
+
+[60/100] Mengambil berita finance...
+✓ Berhasil | 2574 karakter
+
+[61/100] Mengambil berita finance...
+✓ Berhasil | 4587 karakter
+
+[62/100] Mengambil berita finance...
+✓ Berhasil | 1611 karakter
+
+[63/100] Mengambil berita finance...
+✓ Berhasil | 2753 karakter
+
+[64/100] Mengambil berita finance...
+✓ Berhasil | 2806 karakter
+
+[65/100] Mengambil berita finance...
+✓ Berhasil | 3027 karakter
+
+[66/100] Mengambil berita finance...
+✓ Berhasil | 2449 karakter
+
+[67/100] Mengambil berita finance...
+✓ Berhasil | 2301 karakter
+
+[68/100] Mengambil berita finance...
+✓ Berhasil | 1833 karakter
+
+[69/100] Mengambil berita finance...
+✓ Berhasil | 1471 karakter
+
+[70/100] Mengambil berita finance...
+✓ Berhasil | 2287 karakter
+
+[71/100] Mengambil berita finance...
+✓ Berhasil | 2108 karakter
+
+[72/100] Mengambil berita finance...
+✓ Berhasil | 151 karakter
+
+[73/100] Mengambil berita finance...
+✓ Berhasil | 2909 karakter
+
+[74/100] Mengambil berita finance...
+✓ Berhasil | 2699 karakter
+
+[75/100] Mengambil berita finance...
+✓ Berhasil | 3987 karakter
+
+[76/100] Mengambil berita finance...
+✓ Berhasil | 4896 karakter
+
+[77/100] Mengambil berita finance...
+✓ Berhasil | 2129 karakter
+
+[78/100] Mengambil berita finance...
+✓ Berhasil | 1939 karakter
+
+[79/100] Mengambil berita finance...
+✓ Berhasil | 1080 karakter
+
+[80/100] Mengambil berita finance...
+✓ Berhasil | 964 karakter
+
+[81/100] Mengambil berita finance...
+✓ Berhasil | 8456 karakter
+
+[82/100] Mengambil berita finance...
+✓ Berhasil | 130 karakter
+
+[83/100] Mengambil berita finance...
+✓ Berhasil | 5425 karakter
+
+[84/100] Mengambil berita finance...
+✓ Berhasil | 2788 karakter
+
+[85/100] Mengambil berita finance...
+✓ Berhasil | 4967 karakter
+
+[86/100] Mengambil berita finance...
+✓ Berhasil | 3495 karakter
+
+[87/100] Mengambil berita finance...
+✓ Berhasil | 3008 karakter
+
+[88/100] Mengambil berita finance...
+✓ Berhasil | 1737 karakter
+
+[89/100] Mengambil berita finance...
+✓ Berhasil | 3121 karakter
+
+[90/100] Mengambil berita finance...
+✓ Berhasil | 156 karakter
+
+[91/100] Mengambil berita finance...
+✓ Berhasil | 3661 karakter
+
+[92/100] Mengambil berita finance...
+✓ Berhasil | 2283 karakter
+
+[93/100] Mengambil berita finance...
+✓ Berhasil | 1974 karakter
+
+[94/100] Mengambil berita finance...
+✓ Berhasil | 2729 karakter
+
+[95/100] Mengambil berita finance...
+✓ Berhasil | 144 karakter
+
+[96/100] Mengambil berita finance...
+✓ Berhasil | 148 karakter
+
+[97/100] Mengambil berita finance...
+✓ Berhasil | 1283 karakter
+
+[98/100] Mengambil berita finance...
+✓ Berhasil | 2567 karakter
+
+[99/100] Mengambil berita finance...
+✓ Berhasil | 146 karakter
+
+[100/100] Mengambil berita finance...
+✓ Berhasil | 3495 karakter
+
+======================================
+Berita finance berhasil: 100
+======================================
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="menggabungkan-data">
+<h2>13. Menggabungkan Data<a class="headerlink" href="#menggabungkan-data" title="Link to this heading">#</a></h2>
+<p>Setelah proses crawling kategori Sport dan Finance selesai, kedua dataset digabungkan menjadi satu variabel bernama <code class="docutils literal notranslate"><span class="pre">semua_data</span></code>.</p>
+<p>Penggabungan dilakukan agar seluruh berita dapat disimpan dalam satu file dataset.</p>
+<p>Jika masing-masing kategori berhasil mendapatkan 100 berita, maka jumlah keseluruhan data adalah:</p>
+<ul class="simple">
+<li><p>Sport = 100 berita</p></li>
+<li><p>Finance = 100 berita</p></li>
+<li><p>Total = 200 berita</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">semua_data</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">data_sport</span> <span class="o">+</span>
+    <span class="n">data_finance</span>
+<span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Total data:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">semua_data</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Total data: 200
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="menyimpan-dataset-ke-csv">
+<h2>14. Menyimpan Dataset ke CSV<a class="headerlink" href="#menyimpan-dataset-ke-csv" title="Link to this heading">#</a></h2>
+<p>Data hasil crawling selanjutnya disimpan ke dalam file CSV dengan nama <code class="docutils literal notranslate"><span class="pre">dataset_berita.csv</span></code>.</p>
+<p>Format CSV dipilih karena mudah digunakan dan dapat dibuka menggunakan berbagai aplikasi seperti Microsoft Excel, Google Sheets, maupun Python.</p>
+<p>Dataset terdiri dari tiga kolom:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Kolom</p></th>
+<th class="head"><p>Keterangan</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">id</span></code></p></td>
+<td><p>Nomor identitas data</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">isi_berita</span></code></p></td>
+<td><p>Teks atau isi berita</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">label</span></code></p></td>
+<td><p>Kategori berita</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Kolom <code class="docutils literal notranslate"><span class="pre">id</span></code> dibuat secara berurutan mulai dari angka 1.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span>
+    <span class="s2">&quot;dataset_berita.csv&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;w&quot;</span><span class="p">,</span>
+    <span class="n">newline</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8-sig&quot;</span>
+<span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+
+    <span class="n">writer</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">writer</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+
+    <span class="n">writer</span><span class="o">.</span><span class="n">writerow</span><span class="p">([</span>
+        <span class="s2">&quot;id&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;isi_berita&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;label&quot;</span>
+    <span class="p">])</span>
+
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">berita</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span>
+        <span class="n">semua_data</span><span class="p">,</span>
+        <span class="n">start</span><span class="o">=</span><span class="mi">1</span>
+    <span class="p">):</span>
+
+        <span class="n">writer</span><span class="o">.</span><span class="n">writerow</span><span class="p">([</span>
+            <span class="n">i</span><span class="p">,</span>
+            <span class="n">berita</span><span class="p">[</span><span class="s2">&quot;isi_berita&quot;</span><span class="p">],</span>
+            <span class="n">berita</span><span class="p">[</span><span class="s2">&quot;label&quot;</span><span class="p">]</span>
+        <span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Dataset berhasil disimpan sebagai dataset_berita.csv&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dataset berhasil disimpan sebagai dataset_berita.csv
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="hasil-crawling">
+<h2>15. Hasil Crawling<a class="headerlink" href="#hasil-crawling" title="Link to this heading">#</a></h2>
+<p>Tahap terakhir adalah menampilkan ringkasan hasil proses crawling.</p>
+<p>Informasi yang ditampilkan meliputi jumlah berita yang berhasil dikumpulkan dari setiap kategori, jumlah keseluruhan data, serta nama file dataset yang telah dibuat.</p>
+<p>Apabila seluruh target berhasil dicapai, maka jumlah data yang dihasilkan adalah:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Sport    : 100 berita
+Finance  : 100 berita
+Total    : 200 berita
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 31. Code Cell — Hasil Akhir</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;======================================&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;        CRAWLING SELESAI&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;======================================&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Data Sport   :&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">data_sport</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Data Finance :&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">data_finance</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Total Data   :&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">semua_data</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;File         : dataset_berita.csv&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;======================================&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>======================================
+        CRAWLING SELESAI
+======================================
+Data Sport   : 100
+Data Finance : 100
+Total Data   : 200
+File         : dataset_berita.csv
+======================================
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="menampilkan-data-hasil-crawling">
+<h2>16. Menampilkan Data Hasil Crawling<a class="headerlink" href="#menampilkan-data-hasil-crawling" title="Link to this heading">#</a></h2>
+<p>Setelah proses crawling selesai dan dataset berhasil disimpan, kita dapat melihat sebagian data yang telah berhasil dikumpulkan.</p>
+<p>Pada tahap ini, data ditampilkan berdasarkan kategorinya, yaitu <strong>Sport</strong> dan <strong>Finance</strong>.</p>
+<p>Masing-masing kategori akan menampilkan 5 data pertama sebagai contoh hasil crawling. Data yang ditampilkan terdiri dari:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">id</span></code> — nomor identitas data</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">isi_berita</span></code> — isi berita</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">label</span></code> — kategori berita</p></li>
+</ul>
+<p>Penampilan sebagian data ini bertujuan untuk memastikan bahwa proses crawling dan penyimpanan dataset telah berjalan dengan baik.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">pip</span> install pandas
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting pandas
+  Downloading pandas-3.0.5-cp313-cp313-win_amd64.whl.metadata (19 kB)
+Requirement already satisfied: numpy&gt;=1.26.0 in c:\users\acer\onedrive\documents\dokumen kuliah\semester 7\ppw\.venv\lib\site-packages (from pandas) (2.5.3)
+Requirement already satisfied: python-dateutil&gt;=2.8.2 in c:\users\acer\onedrive\documents\dokumen kuliah\semester 7\ppw\.venv\lib\site-packages (from pandas) (2.9.0.post0)
+Requirement already satisfied: tzdata in c:\users\acer\onedrive\documents\dokumen kuliah\semester 7\ppw\.venv\lib\site-packages (from pandas) (2026.3)
+Requirement already satisfied: six&gt;=1.5 in c:\users\acer\onedrive\documents\dokumen kuliah\semester 7\ppw\.venv\lib\site-packages (from python-dateutil&gt;=2.8.2-&gt;pandas) (1.17.0)
+Downloading pandas-3.0.5-cp313-cp313-win_amd64.whl (9.8 MB)
+   ---------------------------------------- 0.0/9.8 MB ? eta -:--:--
+   ---------------------------------------- 0.0/9.8 MB ? eta -:--:--
+   - -------------------------------------- 0.3/9.8 MB ? eta -:--:--
+   - -------------------------------------- 0.3/9.8 MB ? eta -:--:--
+   -- ------------------------------------- 0.5/9.8 MB 654.4 kB/s eta 0:00:15
+   --- ------------------------------------ 0.8/9.8 MB 891.9 kB/s eta 0:00:11
+   --- ------------------------------------ 0.8/9.8 MB 891.9 kB/s eta 0:00:11
+   ---- ----------------------------------- 1.0/9.8 MB 730.4 kB/s eta 0:00:13
+   ---- ----------------------------------- 1.0/9.8 MB 730.4 kB/s eta 0:00:13
+   ---- ----------------------------------- 1.0/9.8 MB 730.4 kB/s eta 0:00:13
+   ---- ----------------------------------- 1.0/9.8 MB 730.4 kB/s eta 0:00:13
+   ----- ---------------------------------- 1.3/9.8 MB 560.1 kB/s eta 0:00:16
+   ----- ---------------------------------- 1.3/9.8 MB 560.1 kB/s eta 0:00:16
+   ----- ---------------------------------- 1.3/9.8 MB 560.1 kB/s eta 0:00:16
+   ----- ---------------------------------- 1.3/9.8 MB 560.1 kB/s eta 0:00:16
+   ----- ---------------------------------- 1.3/9.8 MB 560.1 kB/s eta 0:00:16
+   ----- ---------------------------------- 1.3/9.8 MB 560.1 kB/s eta 0:00:16
+   ------ --------------------------------- 1.6/9.8 MB 414.0 kB/s eta 0:00:20
+   ------ --------------------------------- 1.6/9.8 MB 414.0 kB/s eta 0:00:20
+   ------ --------------------------------- 1.6/9.8 MB 414.0 kB/s eta 0:00:20
+   ------ --------------------------------- 1.6/9.8 MB 414.0 kB/s eta 0:00:20
+   ------ --------------------------------- 1.6/9.8 MB 414.0 kB/s eta 0:00:20
+   ------ --------------------------------- 1.6/9.8 MB 414.0 kB/s eta 0:00:20
+   ------ --------------------------------- 1.6/9.8 MB 414.0 kB/s eta 0:00:20
+   ------- -------------------------------- 1.8/9.8 MB 338.4 kB/s eta 0:00:24
+   ------- -------------------------------- 1.8/9.8 MB 338.4 kB/s eta 0:00:24
+   ------- -------------------------------- 1.8/9.8 MB 338.4 kB/s eta 0:00:24
+   ------- -------------------------------- 1.8/9.8 MB 338.4 kB/s eta 0:00:24
+   ------- -------------------------------- 1.8/9.8 MB 338.4 kB/s eta 0:00:24
+   ------- -------------------------------- 1.8/9.8 MB 338.4 kB/s eta 0:00:24
+   ------- -------------------------------- 1.8/9.8 MB 338.4 kB/s eta 0:00:24
+   ------- -------------------------------- 1.8/9.8 MB 338.4 kB/s eta 0:00:24
+   ------- -------------------------------- 1.8/9.8 MB 338.4 kB/s eta 0:00:24
+   -------- ------------------------------- 2.1/9.8 MB 284.1 kB/s eta 0:00:28
+   -------- ------------------------------- 2.1/9.8 MB 284.1 kB/s eta 0:00:28
+   -------- ------------------------------- 2.1/9.8 MB 284.1 kB/s eta 0:00:28
+   -------- ------------------------------- 2.1/9.8 MB 284.1 kB/s eta 0:00:28
+   -------- ------------------------------- 2.1/9.8 MB 284.1 kB/s eta 0:00:28
+   -------- ------------------------------- 2.1/9.8 MB 284.1 kB/s eta 0:00:28
+   -------- ------------------------------- 2.1/9.8 MB 284.1 kB/s eta 0:00:28
+   -------- ------------------------------- 2.1/9.8 MB 284.1 kB/s eta 0:00:28
+   -------- ------------------------------- 2.1/9.8 MB 284.1 kB/s eta 0:00:28
+   -------- ------------------------------- 2.1/9.8 MB 284.1 kB/s eta 0:00:28
+   --------- ------------------------------ 2.4/9.8 MB 240.0 kB/s eta 0:00:32
+   --------- ------------------------------ 2.4/9.8 MB 240.0 kB/s eta 0:00:32
+   --------- ------------------------------ 2.4/9.8 MB 240.0 kB/s eta 0:00:32
+   --------- ------------------------------ 2.4/9.8 MB 240.0 kB/s eta 0:00:32
+   --------- ------------------------------ 2.4/9.8 MB 240.0 kB/s eta 0:00:32
+   --------- ------------------------------ 2.4/9.8 MB 240.0 kB/s eta 0:00:32
+   --------- ------------------------------ 2.4/9.8 MB 240.0 kB/s eta 0:00:32
+   --------- ------------------------------ 2.4/9.8 MB 240.0 kB/s eta 0:00:32
+   --------- ------------------------------ 2.4/9.8 MB 240.0 kB/s eta 0:00:32
+   --------- ------------------------------ 2.4/9.8 MB 240.0 kB/s eta 0:00:32
+   --------- ------------------------------ 2.4/9.8 MB 240.0 kB/s eta 0:00:32
+   --------- ------------------------------ 2.4/9.8 MB 240.0 kB/s eta 0:00:32
+   ---------- ----------------------------- 2.6/9.8 MB 213.7 kB/s eta 0:00:34
+   ---------- ----------------------------- 2.6/9.8 MB 213.7 kB/s eta 0:00:34
+   ---------- ----------------------------- 2.6/9.8 MB 213.7 kB/s eta 0:00:34
+   ---------- ----------------------------- 2.6/9.8 MB 213.7 kB/s eta 0:00:34
+   ---------- ----------------------------- 2.6/9.8 MB 213.7 kB/s eta 0:00:34
+   ---------- ----------------------------- 2.6/9.8 MB 213.7 kB/s eta 0:00:34
+   ---------- ----------------------------- 2.6/9.8 MB 213.7 kB/s eta 0:00:34
+   ---------- ----------------------------- 2.6/9.8 MB 213.7 kB/s eta 0:00:34
+   ---------- ----------------------------- 2.6/9.8 MB 213.7 kB/s eta 0:00:34
+   ---------- ----------------------------- 2.6/9.8 MB 213.7 kB/s eta 0:00:34
+   ---------- ----------------------------- 2.6/9.8 MB 213.7 kB/s eta 0:00:34
+   ----------- ---------------------------- 2.9/9.8 MB 196.2 kB/s eta 0:00:36
+   ----------- ---------------------------- 2.9/9.8 MB 196.2 kB/s eta 0:00:36
+   ----------- ---------------------------- 2.9/9.8 MB 196.2 kB/s eta 0:00:36
+   ----------- ---------------------------- 2.9/9.8 MB 196.2 kB/s eta 0:00:36
+   ----------- ---------------------------- 2.9/9.8 MB 196.2 kB/s eta 0:00:36
+   ----------- ---------------------------- 2.9/9.8 MB 196.2 kB/s eta 0:00:36
+   ----------- ---------------------------- 2.9/9.8 MB 196.2 kB/s eta 0:00:36
+   ----------- ---------------------------- 2.9/9.8 MB 196.2 kB/s eta 0:00:36
+   ----------- ---------------------------- 2.9/9.8 MB 196.2 kB/s eta 0:00:36
+   ------------ --------------------------- 3.1/9.8 MB 187.8 kB/s eta 0:00:36
+   ------------ --------------------------- 3.1/9.8 MB 187.8 kB/s eta 0:00:36
+   ------------ --------------------------- 3.1/9.8 MB 187.8 kB/s eta 0:00:36
+   ------------ --------------------------- 3.1/9.8 MB 187.8 kB/s eta 0:00:36
+   ------------ --------------------------- 3.1/9.8 MB 187.8 kB/s eta 0:00:36
+   ------------ --------------------------- 3.1/9.8 MB 187.8 kB/s eta 0:00:36
+   ------------ --------------------------- 3.1/9.8 MB 187.8 kB/s eta 0:00:36
+   ------------ --------------------------- 3.1/9.8 MB 187.8 kB/s eta 0:00:36
+   ------------ --------------------------- 3.1/9.8 MB 187.8 kB/s eta 0:00:36
+   ------------ --------------------------- 3.1/9.8 MB 187.8 kB/s eta 0:00:36
+   ------------ --------------------------- 3.1/9.8 MB 187.8 kB/s eta 0:00:36
+   ------------- -------------------------- 3.4/9.8 MB 179.2 kB/s eta 0:00:36
+   ------------- -------------------------- 3.4/9.8 MB 179.2 kB/s eta 0:00:36
+   ------------- -------------------------- 3.4/9.8 MB 179.2 kB/s eta 0:00:36
+   ------------- -------------------------- 3.4/9.8 MB 179.2 kB/s eta 0:00:36
+   ------------- -------------------------- 3.4/9.8 MB 179.2 kB/s eta 0:00:36
+   ------------- -------------------------- 3.4/9.8 MB 179.2 kB/s eta 0:00:36
+   ------------- -------------------------- 3.4/9.8 MB 179.2 kB/s eta 0:00:36
+   ------------- -------------------------- 3.4/9.8 MB 179.2 kB/s eta 0:00:36
+   -------------- ------------------------- 3.7/9.8 MB 176.6 kB/s eta 0:00:35
+   -------------- ------------------------- 3.7/9.8 MB 176.6 kB/s eta 0:00:35
+   -------------- ------------------------- 3.7/9.8 MB 176.6 kB/s eta 0:00:35
+   -------------- ------------------------- 3.7/9.8 MB 176.6 kB/s eta 0:00:35
+   -------------- ------------------------- 3.7/9.8 MB 176.6 kB/s eta 0:00:35
+   -------------- ------------------------- 3.7/9.8 MB 176.6 kB/s eta 0:00:35
+   -------------- ------------------------- 3.7/9.8 MB 176.6 kB/s eta 0:00:35
+   -------------- ------------------------- 3.7/9.8 MB 176.6 kB/s eta 0:00:35
+   -------------- ------------------------- 3.7/9.8 MB 176.6 kB/s eta 0:00:35
+   -------------- ------------------------- 3.7/9.8 MB 176.6 kB/s eta 0:00:35
+   -------------- ------------------------- 3.7/9.8 MB 176.6 kB/s eta 0:00:35
+   ---------------- ----------------------- 3.9/9.8 MB 169.5 kB/s eta 0:00:35
+   ---------------- ----------------------- 3.9/9.8 MB 169.5 kB/s eta 0:00:35
+   ---------------- ----------------------- 3.9/9.8 MB 169.5 kB/s eta 0:00:35
+   ---------------- ----------------------- 3.9/9.8 MB 169.5 kB/s eta 0:00:35
+   ---------------- ----------------------- 3.9/9.8 MB 169.5 kB/s eta 0:00:35
+   ---------------- ----------------------- 3.9/9.8 MB 169.5 kB/s eta 0:00:35
+   ---------------- ----------------------- 3.9/9.8 MB 169.5 kB/s eta 0:00:35
+   ---------------- ----------------------- 3.9/9.8 MB 169.5 kB/s eta 0:00:35
+   ----------------- ---------------------- 4.2/9.8 MB 169.0 kB/s eta 0:00:34
+   ----------------- ---------------------- 4.2/9.8 MB 169.0 kB/s eta 0:00:34
+   ----------------- ---------------------- 4.2/9.8 MB 169.0 kB/s eta 0:00:34
+   ----------------- ---------------------- 4.2/9.8 MB 169.0 kB/s eta 0:00:34
+   ----------------- ---------------------- 4.2/9.8 MB 169.0 kB/s eta 0:00:34
+   ----------------- ---------------------- 4.2/9.8 MB 169.0 kB/s eta 0:00:34
+   ----------------- ---------------------- 4.2/9.8 MB 169.0 kB/s eta 0:00:34
+   ------------------ --------------------- 4.5/9.8 MB 170.0 kB/s eta 0:00:32
+   ------------------ --------------------- 4.5/9.8 MB 170.0 kB/s eta 0:00:32
+   ------------------ --------------------- 4.5/9.8 MB 170.0 kB/s eta 0:00:32
+   ------------------ --------------------- 4.5/9.8 MB 170.0 kB/s eta 0:00:32
+   ------------------ --------------------- 4.5/9.8 MB 170.0 kB/s eta 0:00:32
+   ------------------ --------------------- 4.5/9.8 MB 170.0 kB/s eta 0:00:32
+   ------------------ --------------------- 4.5/9.8 MB 170.0 kB/s eta 0:00:32
+   ------------------ --------------------- 4.5/9.8 MB 170.0 kB/s eta 0:00:32
+   ------------------ --------------------- 4.5/9.8 MB 170.0 kB/s eta 0:00:32
+   ------------------ --------------------- 4.5/9.8 MB 170.0 kB/s eta 0:00:32
+   ------------------ --------------------- 4.5/9.8 MB 170.0 kB/s eta 0:00:32
+   ------------------ --------------------- 4.5/9.8 MB 170.0 kB/s eta 0:00:32
+   ------------------- -------------------- 4.7/9.8 MB 163.1 kB/s eta 0:00:32
+   ------------------- -------------------- 4.7/9.8 MB 163.1 kB/s eta 0:00:32
+   ------------------- -------------------- 4.7/9.8 MB 163.1 kB/s eta 0:00:32
+   ------------------- -------------------- 4.7/9.8 MB 163.1 kB/s eta 0:00:32
+   ------------------- -------------------- 4.7/9.8 MB 163.1 kB/s eta 0:00:32
+   ------------------- -------------------- 4.7/9.8 MB 163.1 kB/s eta 0:00:32
+   ------------------- -------------------- 4.7/9.8 MB 163.1 kB/s eta 0:00:32
+   ------------------- -------------------- 4.7/9.8 MB 163.1 kB/s eta 0:00:32
+   ------------------- -------------------- 4.7/9.8 MB 163.1 kB/s eta 0:00:32
+   ------------------- -------------------- 4.7/9.8 MB 163.1 kB/s eta 0:00:32
+   ------------------- -------------------- 4.7/9.8 MB 163.1 kB/s eta 0:00:32
+   ------------------- -------------------- 4.7/9.8 MB 163.1 kB/s eta 0:00:32
+   ------------------- -------------------- 4.7/9.8 MB 163.1 kB/s eta 0:00:32
+   -------------------- ------------------- 5.0/9.8 MB 150.5 kB/s eta 0:00:33
+   -------------------- ------------------- 5.0/9.8 MB 150.5 kB/s eta 0:00:33
+   -------------------- ------------------- 5.0/9.8 MB 150.5 kB/s eta 0:00:33
+   -------------------- ------------------- 5.0/9.8 MB 150.5 kB/s eta 0:00:33
+   -------------------- ------------------- 5.0/9.8 MB 150.5 kB/s eta 0:00:33
+   -------------------- ------------------- 5.0/9.8 MB 150.5 kB/s eta 0:00:33
+   -------------------- ------------------- 5.0/9.8 MB 150.5 kB/s eta 0:00:33
+   -------------------- ------------------- 5.0/9.8 MB 150.5 kB/s eta 0:00:33
+   -------------------- ------------------- 5.0/9.8 MB 150.5 kB/s eta 0:00:33
+   -------------------- ------------------- 5.0/9.8 MB 150.5 kB/s eta 0:00:33
+   -------------------- ------------------- 5.0/9.8 MB 150.5 kB/s eta 0:00:33
+   -------------------- ------------------- 5.0/9.8 MB 150.5 kB/s eta 0:00:33
+   -------------------- ------------------- 5.0/9.8 MB 150.5 kB/s eta 0:00:33
+   -------------------- ------------------- 5.0/9.8 MB 150.5 kB/s eta 0:00:33
+   -------------------- ------------------- 5.0/9.8 MB 150.5 kB/s eta 0:00:33
+   --------------------- ------------------ 5.2/9.8 MB 122.4 kB/s eta 0:00:38
+   --------------------- ------------------ 5.2/9.8 MB 122.4 kB/s eta 0:00:38
+   --------------------- ------------------ 5.2/9.8 MB 122.4 kB/s eta 0:00:38
+   --------------------- ------------------ 5.2/9.8 MB 122.4 kB/s eta 0:00:38
+   --------------------- ------------------ 5.2/9.8 MB 122.4 kB/s eta 0:00:38
+   --------------------- ------------------ 5.2/9.8 MB 122.4 kB/s eta 0:00:38
+   --------------------- ------------------ 5.2/9.8 MB 122.4 kB/s eta 0:00:38
+   --------------------- ------------------ 5.2/9.8 MB 122.4 kB/s eta 0:00:38
+   --------------------- ------------------ 5.2/9.8 MB 122.4 kB/s eta 0:00:38
+   --------------------- ------------------ 5.2/9.8 MB 122.4 kB/s eta 0:00:38
+   --------------------- ------------------ 5.2/9.8 MB 122.4 kB/s eta 0:00:38
+   --------------------- ------------------ 5.2/9.8 MB 122.4 kB/s eta 0:00:38
+   --------------------- ------------------ 5.2/9.8 MB 122.4 kB/s eta 0:00:38
+   --------------------- ------------------ 5.2/9.8 MB 122.4 kB/s eta 0:00:38
+   --------------------- ------------------ 5.2/9.8 MB 122.4 kB/s eta 0:00:38
+   --------------------- ------------------ 5.2/9.8 MB 122.4 kB/s eta 0:00:38
+   --------------------- ------------------ 5.2/9.8 MB 122.4 kB/s eta 0:00:38
+   ---------------------- ----------------- 5.5/9.8 MB 112.9 kB/s eta 0:00:39
+   ---------------------- ----------------- 5.5/9.8 MB 112.9 kB/s eta 0:00:39
+   ---------------------- ----------------- 5.5/9.8 MB 112.9 kB/s eta 0:00:39
+   ---------------------- ----------------- 5.5/9.8 MB 112.9 kB/s eta 0:00:39
+   ---------------------- ----------------- 5.5/9.8 MB 112.9 kB/s eta 0:00:39
+   ---------------------- ----------------- 5.5/9.8 MB 112.9 kB/s eta 0:00:39
+   ---------------------- ----------------- 5.5/9.8 MB 112.9 kB/s eta 0:00:39
+   ---------------------- ----------------- 5.5/9.8 MB 112.9 kB/s eta 0:00:39
+   ---------------------- ----------------- 5.5/9.8 MB 112.9 kB/s eta 0:00:39
+   ---------------------- ----------------- 5.5/9.8 MB 112.9 kB/s eta 0:00:39
+   ---------------------- ----------------- 5.5/9.8 MB 112.9 kB/s eta 0:00:39
+   ---------------------- ----------------- 5.5/9.8 MB 112.9 kB/s eta 0:00:39
+   ---------------------- ----------------- 5.5/9.8 MB 112.9 kB/s eta 0:00:39
+   ---------------------- ----------------- 5.5/9.8 MB 112.9 kB/s eta 0:00:39
+   ---------------------- ----------------- 5.5/9.8 MB 112.9 kB/s eta 0:00:39
+   ---------------------- ----------------- 5.5/9.8 MB 112.9 kB/s eta 0:00:39
+   ---------------------- ----------------- 5.5/9.8 MB 112.9 kB/s eta 0:00:39
+   ---------------------- ----------------- 5.5/9.8 MB 112.9 kB/s eta 0:00:39
+   ---------------------- ----------------- 5.5/9.8 MB 112.9 kB/s eta 0:00:39
+   ----------------------- ---------------- 5.8/9.8 MB 106.3 kB/s eta 0:00:39
+   ----------------------- ---------------- 5.8/9.8 MB 106.3 kB/s eta 0:00:39
+   ----------------------- ---------------- 5.8/9.8 MB 106.3 kB/s eta 0:00:39
+   ----------------------- ---------------- 5.8/9.8 MB 106.3 kB/s eta 0:00:39
+   ----------------------- ---------------- 5.8/9.8 MB 106.3 kB/s eta 0:00:39
+   ----------------------- ---------------- 5.8/9.8 MB 106.3 kB/s eta 0:00:39
+   ----------------------- ---------------- 5.8/9.8 MB 106.3 kB/s eta 0:00:39
+   ----------------------- ---------------- 5.8/9.8 MB 106.3 kB/s eta 0:00:39
+   ----------------------- ---------------- 5.8/9.8 MB 106.3 kB/s eta 0:00:39
+   ----------------------- ---------------- 5.8/9.8 MB 106.3 kB/s eta 0:00:39
+   ----------------------- ---------------- 5.8/9.8 MB 106.3 kB/s eta 0:00:39
+   ----------------------- ---------------- 5.8/9.8 MB 106.3 kB/s eta 0:00:39
+   ------------------------ --------------- 6.0/9.8 MB 105.6 kB/s eta 0:00:36
+   ------------------------ --------------- 6.0/9.8 MB 105.6 kB/s eta 0:00:36
+   ------------------------ --------------- 6.0/9.8 MB 105.6 kB/s eta 0:00:36
+   ------------------------ --------------- 6.0/9.8 MB 105.6 kB/s eta 0:00:36
+   ------------------------ --------------- 6.0/9.8 MB 105.6 kB/s eta 0:00:36
+   ------------------------ --------------- 6.0/9.8 MB 105.6 kB/s eta 0:00:36
+   ------------------------ --------------- 6.0/9.8 MB 105.6 kB/s eta 0:00:36
+   ------------------------ --------------- 6.0/9.8 MB 105.6 kB/s eta 0:00:36
+   ------------------------- -------------- 6.3/9.8 MB 106.1 kB/s eta 0:00:34
+   ------------------------- -------------- 6.3/9.8 MB 106.1 kB/s eta 0:00:34
+   ------------------------- -------------- 6.3/9.8 MB 106.1 kB/s eta 0:00:34
+   ------------------------- -------------- 6.3/9.8 MB 106.1 kB/s eta 0:00:34
+   ------------------------- -------------- 6.3/9.8 MB 106.1 kB/s eta 0:00:34
+   ------------------------- -------------- 6.3/9.8 MB 106.1 kB/s eta 0:00:34
+   ------------------------- -------------- 6.3/9.8 MB 106.1 kB/s eta 0:00:34
+   ------------------------- -------------- 6.3/9.8 MB 106.1 kB/s eta 0:00:34
+   ------------------------- -------------- 6.3/9.8 MB 106.1 kB/s eta 0:00:34
+   -------------------------- ------------- 6.6/9.8 MB 107.6 kB/s eta 0:00:31
+   -------------------------- ------------- 6.6/9.8 MB 107.6 kB/s eta 0:00:31
+   -------------------------- ------------- 6.6/9.8 MB 107.6 kB/s eta 0:00:31
+   -------------------------- ------------- 6.6/9.8 MB 107.6 kB/s eta 0:00:31
+   -------------------------- ------------- 6.6/9.8 MB 107.6 kB/s eta 0:00:31
+   -------------------------- ------------- 6.6/9.8 MB 107.6 kB/s eta 0:00:31
+   -------------------------- ------------- 6.6/9.8 MB 107.6 kB/s eta 0:00:31
+   --------------------------- ------------ 6.8/9.8 MB 108.7 kB/s eta 0:00:28
+   --------------------------- ------------ 6.8/9.8 MB 108.7 kB/s eta 0:00:28
+   --------------------------- ------------ 6.8/9.8 MB 108.7 kB/s eta 0:00:28
+   --------------------------- ------------ 6.8/9.8 MB 108.7 kB/s eta 0:00:28
+   --------------------------- ------------ 6.8/9.8 MB 108.7 kB/s eta 0:00:28
+   --------------------------- ------------ 6.8/9.8 MB 108.7 kB/s eta 0:00:28
+   --------------------------- ------------ 6.8/9.8 MB 108.7 kB/s eta 0:00:28
+   --------------------------- ------------ 6.8/9.8 MB 108.7 kB/s eta 0:00:28
+   --------------------------- ------------ 6.8/9.8 MB 108.7 kB/s eta 0:00:28
+   --------------------------- ------------ 6.8/9.8 MB 108.7 kB/s eta 0:00:28
+   --------------------------- ------------ 6.8/9.8 MB 108.7 kB/s eta 0:00:28
+   ---------------------------- ----------- 7.1/9.8 MB 108.5 kB/s eta 0:00:26
+   ---------------------------- ----------- 7.1/9.8 MB 108.5 kB/s eta 0:00:26
+   ---------------------------- ----------- 7.1/9.8 MB 108.5 kB/s eta 0:00:26
+   ---------------------------- ----------- 7.1/9.8 MB 108.5 kB/s eta 0:00:26
+   ---------------------------- ----------- 7.1/9.8 MB 108.5 kB/s eta 0:00:26
+   ---------------------------- ----------- 7.1/9.8 MB 108.5 kB/s eta 0:00:26
+   ---------------------------- ----------- 7.1/9.8 MB 108.5 kB/s eta 0:00:26
+   ----------------------------- ---------- 7.3/9.8 MB 109.2 kB/s eta 0:00:23
+   ----------------------------- ---------- 7.3/9.8 MB 109.2 kB/s eta 0:00:23
+   ----------------------------- ---------- 7.3/9.8 MB 109.2 kB/s eta 0:00:23
+   ----------------------------- ---------- 7.3/9.8 MB 109.2 kB/s eta 0:00:23
+   ------------------------------ --------- 7.6/9.8 MB 114.6 kB/s eta 0:00:20
+   ------------------------------ --------- 7.6/9.8 MB 114.6 kB/s eta 0:00:20
+   ------------------------------ --------- 7.6/9.8 MB 114.6 kB/s eta 0:00:20
+   ------------------------------ --------- 7.6/9.8 MB 114.6 kB/s eta 0:00:20
+   ------------------------------ --------- 7.6/9.8 MB 114.6 kB/s eta 0:00:20
+   ------------------------------ --------- 7.6/9.8 MB 114.6 kB/s eta 0:00:20
+   ------------------------------ --------- 7.6/9.8 MB 114.6 kB/s eta 0:00:20
+   -------------------------------- ------- 7.9/9.8 MB 114.3 kB/s eta 0:00:18
+   -------------------------------- ------- 7.9/9.8 MB 114.3 kB/s eta 0:00:18
+   -------------------------------- ------- 7.9/9.8 MB 114.3 kB/s eta 0:00:18
+   -------------------------------- ------- 7.9/9.8 MB 114.3 kB/s eta 0:00:18
+   -------------------------------- ------- 7.9/9.8 MB 114.3 kB/s eta 0:00:18
+   -------------------------------- ------- 7.9/9.8 MB 114.3 kB/s eta 0:00:18
+   -------------------------------- ------- 7.9/9.8 MB 114.3 kB/s eta 0:00:18
+   -------------------------------- ------- 7.9/9.8 MB 114.3 kB/s eta 0:00:18
+   -------------------------------- ------- 7.9/9.8 MB 114.3 kB/s eta 0:00:18
+   -------------------------------- ------- 7.9/9.8 MB 114.3 kB/s eta 0:00:18
+   -------------------------------- ------- 7.9/9.8 MB 114.3 kB/s eta 0:00:18
+   -------------------------------- ------- 7.9/9.8 MB 114.3 kB/s eta 0:00:18
+   --------------------------------- ------ 8.1/9.8 MB 115.2 kB/s eta 0:00:15
+   --------------------------------- ------ 8.1/9.8 MB 115.2 kB/s eta 0:00:15
+   --------------------------------- ------ 8.1/9.8 MB 115.2 kB/s eta 0:00:15
+   --------------------------------- ------ 8.1/9.8 MB 115.2 kB/s eta 0:00:15
+   --------------------------------- ------ 8.1/9.8 MB 115.2 kB/s eta 0:00:15
+   --------------------------------- ------ 8.1/9.8 MB 115.2 kB/s eta 0:00:15
+   --------------------------------- ------ 8.1/9.8 MB 115.2 kB/s eta 0:00:15
+   --------------------------------- ------ 8.1/9.8 MB 115.2 kB/s eta 0:00:15
+   ---------------------------------- ----- 8.4/9.8 MB 119.8 kB/s eta 0:00:13
+   ---------------------------------- ----- 8.4/9.8 MB 119.8 kB/s eta 0:00:13
+   ---------------------------------- ----- 8.4/9.8 MB 119.8 kB/s eta 0:00:13
+   ---------------------------------- ----- 8.4/9.8 MB 119.8 kB/s eta 0:00:13
+   ---------------------------------- ----- 8.4/9.8 MB 119.8 kB/s eta 0:00:13
+   ---------------------------------- ----- 8.4/9.8 MB 119.8 kB/s eta 0:00:13
+   ----------------------------------- ---- 8.7/9.8 MB 123.5 kB/s eta 0:00:10
+   ----------------------------------- ---- 8.7/9.8 MB 123.5 kB/s eta 0:00:10
+   ----------------------------------- ---- 8.7/9.8 MB 123.5 kB/s eta 0:00:10
+   ----------------------------------- ---- 8.7/9.8 MB 123.5 kB/s eta 0:00:10
+   ----------------------------------- ---- 8.7/9.8 MB 123.5 kB/s eta 0:00:10
+   ----------------------------------- ---- 8.7/9.8 MB 123.5 kB/s eta 0:00:10
+   ------------------------------------ --- 8.9/9.8 MB 131.5 kB/s eta 0:00:07
+   ------------------------------------ --- 8.9/9.8 MB 131.5 kB/s eta 0:00:07
+   ------------------------------------ --- 8.9/9.8 MB 131.5 kB/s eta 0:00:07
+   ------------------------------------ --- 8.9/9.8 MB 131.5 kB/s eta 0:00:07
+   ------------------------------------ --- 8.9/9.8 MB 131.5 kB/s eta 0:00:07
+   ------------------------------------ --- 8.9/9.8 MB 131.5 kB/s eta 0:00:07
+   ------------------------------------ --- 8.9/9.8 MB 131.5 kB/s eta 0:00:07
+   ------------------------------------ --- 8.9/9.8 MB 131.5 kB/s eta 0:00:07
+   ------------------------------------ --- 8.9/9.8 MB 131.5 kB/s eta 0:00:07
+   ------------------------------------ --- 8.9/9.8 MB 131.5 kB/s eta 0:00:07
+   ------------------------------------ --- 8.9/9.8 MB 131.5 kB/s eta 0:00:07
+   ------------------------------------ --- 8.9/9.8 MB 131.5 kB/s eta 0:00:07
+   ------------------------------------- -- 9.2/9.8 MB 136.2 kB/s eta 0:00:05
+   ------------------------------------- -- 9.2/9.8 MB 136.2 kB/s eta 0:00:05
+   ------------------------------------- -- 9.2/9.8 MB 136.2 kB/s eta 0:00:05
+   ------------------------------------- -- 9.2/9.8 MB 136.2 kB/s eta 0:00:05
+   ------------------------------------- -- 9.2/9.8 MB 136.2 kB/s eta 0:00:05
+   ------------------------------------- -- 9.2/9.8 MB 136.2 kB/s eta 0:00:05
+   ------------------------------------- -- 9.2/9.8 MB 136.2 kB/s eta 0:00:05
+   ------------------------------------- -- 9.2/9.8 MB 136.2 kB/s eta 0:00:05
+   ------------------------------------- -- 9.2/9.8 MB 136.2 kB/s eta 0:00:05
+   ------------------------------------- -- 9.2/9.8 MB 136.2 kB/s eta 0:00:05
+   -------------------------------------- - 9.4/9.8 MB 135.6 kB/s eta 0:00:03
+   -------------------------------------- - 9.4/9.8 MB 135.6 kB/s eta 0:00:03
+   -------------------------------------- - 9.4/9.8 MB 135.6 kB/s eta 0:00:03
+   -------------------------------------- - 9.4/9.8 MB 135.6 kB/s eta 0:00:03
+   -------------------------------------- - 9.4/9.8 MB 135.6 kB/s eta 0:00:03
+   -------------------------------------- - 9.4/9.8 MB 135.6 kB/s eta 0:00:03
+   -------------------------------------- - 9.4/9.8 MB 135.6 kB/s eta 0:00:03
+   -------------------------------------- - 9.4/9.8 MB 135.6 kB/s eta 0:00:03
+   -------------------------------------- - 9.4/9.8 MB 135.6 kB/s eta 0:00:03
+   -------------------------------------- - 9.4/9.8 MB 135.6 kB/s eta 0:00:03
+   -------------------------------------- - 9.4/9.8 MB 135.6 kB/s eta 0:00:03
+   ---------------------------------------  9.7/9.8 MB 144.2 kB/s eta 0:00:01
+   ---------------------------------------  9.7/9.8 MB 144.2 kB/s eta 0:00:01
+   ---------------------------------------  9.7/9.8 MB 144.2 kB/s eta 0:00:01
+   ---------------------------------------  9.7/9.8 MB 144.2 kB/s eta 0:00:01
+   ---------------------------------------- 9.8/9.8 MB 144.2 kB/s eta 0:00:00
+Installing collected packages: pandas
+Successfully installed pandas-3.0.5
+Note: you may need to restart the kernel to use updated packages.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[notice] A new release of pip is available: 25.0.1 -&gt; 26.2.1
+[notice] To update, run: python.exe -m pip install --upgrade pip
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+
+<span class="c1"># Membaca dataset hasil crawling</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;dataset_berita.csv&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Jumlah seluruh data:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Jumlah seluruh data: 200
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;===== 5 DATA SPORT =====&quot;</span><span class="p">)</span>
+
+<span class="n">display</span><span class="p">(</span>
+    <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;label&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;sport&quot;</span><span class="p">][</span>
+        <span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="s2">&quot;isi_berita&quot;</span><span class="p">,</span> <span class="s2">&quot;label&quot;</span><span class="p">]</span>
+    <span class="p">]</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">===== 5 DATA FINANCE =====&quot;</span><span class="p">)</span>
+
+<span class="n">display</span><span class="p">(</span>
+    <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;label&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;finance&quot;</span><span class="p">][</span>
+        <span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="s2">&quot;isi_berita&quot;</span><span class="p">,</span> <span class="s2">&quot;label&quot;</span><span class="p">]</span>
+    <span class="p">]</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>===== 5 DATA SPORT =====
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id</th>
+      <th>isi_berita</th>
+      <th>label</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>Jakarta - Putri Kusuma Wardani percaya diri de...</td>
+      <td>sport</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>Jakarta - Mata Derrick Michael Xzavierro berbi...</td>
+      <td>sport</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>Jakarta - Marc Marquez masih harus beradaptasi...</td>
+      <td>sport</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>Jakarta - Momen debut di Asian Games 2026 tak ...</td>
+      <td>sport</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>Jakarta - MotoGP 2026 akan berlanjut ke San Ma...</td>
+      <td>sport</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>===== 5 DATA FINANCE =====
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id</th>
+      <th>isi_berita</th>
+      <th>label</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>100</th>
+      <td>101</td>
+      <td>Jakarta - Penutupan operasional Bandara Soekar...</td>
+      <td>finance</td>
+    </tr>
+    <tr>
+      <th>101</th>
+      <td>102</td>
+      <td>Jakarta - Menteri Keuangan (Menkeu) Purbaya Yu...</td>
+      <td>finance</td>
+    </tr>
+    <tr>
+      <th>102</th>
+      <td>103</td>
+      <td>Jakarta - Menteri Keuangan Purbaya Yudhi Sadew...</td>
+      <td>finance</td>
+    </tr>
+    <tr>
+      <th>103</th>
+      <td>104</td>
+      <td>Jakarta - PT Pertamina Patra Niaga memperkuat ...</td>
+      <td>finance</td>
+    </tr>
+    <tr>
+      <th>104</th>
+      <td>105</td>
+      <td>Jakarta - AirNav Indonesia kembali memperbarui...</td>
+      <td>finance</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">👋 Hello, I’m Rohman Maulana!</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pendahuluan">Pendahuluan</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-library">1. Import Library</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menentukan-http-headers">2. Menentukan HTTP Headers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#membuat-session">3. Membuat Session</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#membuat-fungsi-untuk-mengambil-url-artikel">4. Membuat Fungsi untuk Mengambil URL Artikel</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menentukan-url-kategori-sport">5. Menentukan URL Kategori Sport</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pengujian-pengambilan-url-artikel">6. Pengujian Pengambilan URL Artikel</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#membuat-fungsi-untuk-mengambil-isi-berita">7. Membuat Fungsi untuk Mengambil Isi Berita</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pengujian-pengambilan-isi-berita">8. Pengujian Pengambilan Isi Berita</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#membuat-fungsi-crawling-kategori">9. Membuat Fungsi Crawling Kategori</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menentukan-sumber-data">10. Menentukan Sumber Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#crawling-berita-sport">11. Crawling Berita Sport</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menggabungkan-data">13. Menggabungkan Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menyimpan-dataset-ke-csv">14. Menyimpan Dataset ke CSV</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hasil-crawling">15. Hasil Crawling</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menampilkan-data-hasil-crawling">16. Menampilkan Data Hasil Crawling</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Rohman Maulana
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
