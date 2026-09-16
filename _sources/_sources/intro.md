@@ -1,6 +1,8 @@
 ![Coding](https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif)
 
-# 👋 Hello, I'm Rohman Maulana!
+# Intro
+
+## 👋 Hello, I’m Rohman Maulana!
 
 > **Welcome to my Web Mining Journey 🚀**
 
