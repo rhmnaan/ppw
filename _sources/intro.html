@@ -201,16 +201,13 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../intro.html">
-                    👋 Hello, I’m Rohman Maulana!
+                    Intro
                 </a>
             </li>
         </ul>
         <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../crawling.html">Web Crawling Berita Detik</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../pemrosesan.html">1. Data Understanding</a></li>
-
-
-
+<li class="toctree-l1"><a class="reference internal" href="../pemrosesan.html">Data Processing</a></li>
 </ul>
 
     </div>
@@ -406,8 +403,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apa-itu-web-mining">🌐 Apa Itu Web Mining?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#about-me">🧑‍💻 About Me</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#let-s-explore-the-data">💻 Let’s Explore the Data!</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#let-s-explore-the-web-data">💻 Let’s Explore the Web Data!</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rohman-maulana">👨‍💻 Rohman Maulana</a></li>
 </ul>
 </li>
@@ -426,7 +424,7 @@ document.write(`
 <section class="tex2jax_ignore mathjax_ignore" id="hello-i-m-rohman-maulana">
 <h1>👋 Hello, I’m Rohman Maulana!<a class="headerlink" href="#hello-i-m-rohman-maulana" title="Link to this heading">#</a></h1>
 <blockquote>
-<div><p><strong>Welcome to my Data Mining Journey 🚀</strong></p>
+<div><p><strong>Welcome to my Web Mining Journey 🚀</strong></p>
 </div></blockquote>
 <p>Selamat datang di <strong>Jupyter Book PPW A</strong>!</p>
 <p>Perkenalkan, saya:</p>
@@ -450,29 +448,57 @@ document.write(`
 <td><p><strong>PPW A</strong></p></td>
 </tr>
 <tr class="row-even"><td><p>📖 <strong>Mata Kuliah</strong></p></td>
-<td><p><strong>Penambangan / Data Mining</strong></p></td>
+<td><p><strong>Web Mining</strong></p></td>
 </tr>
 </tbody>
 </table>
 </div>
 <hr class="docutils" />
+<section id="apa-itu-web-mining">
+<h2>🌐 Apa Itu Web Mining?<a class="headerlink" href="#apa-itu-web-mining" title="Link to this heading">#</a></h2>
+<p><strong>Web Mining</strong> atau penambangan web adalah proses menerapkan teknik pengolahan data, data mining, dan machine learning untuk menemukan informasi, pola, serta pengetahuan yang bermanfaat dari berbagai sumber data di web.</p>
+<p>Web Mining dapat digunakan untuk mengumpulkan dan menganalisis data yang berasal dari halaman website, artikel berita, dokumen online, maupun aktivitas pengguna di internet.</p>
+<p>Secara umum, Web Mining dibagi menjadi tiga jenis utama:</p>
+<ol class="arabic">
+<li><p><strong>Web Content Mining</strong></p>
+<p>Proses mengekstraksi informasi dari isi atau konten halaman web, seperti teks artikel berita, gambar, video, dan dokumen. Contohnya adalah mengambil isi berita dari website untuk dianalisis.</p>
+</li>
+<li><p><strong>Web Structure Mining</strong></p>
+<p>Proses menganalisis struktur atau hubungan antarhalaman web berdasarkan tautan (<em>hyperlink</em>). Teknik ini dapat digunakan untuk mengetahui hubungan dan keterkaitan antarhalaman dalam sebuah website.</p>
+</li>
+<li><p><strong>Web Usage Mining</strong></p>
+<p>Proses menganalisis pola perilaku pengguna berdasarkan data aktivitas mereka di web, seperti riwayat kunjungan halaman, klik, dan interaksi pengguna.</p>
+</li>
+</ol>
+<p>Dalam pembelajaran ini, saya akan lebih berfokus pada <strong>Web Content Mining</strong>, khususnya pengumpulan dan pengolahan teks dari website untuk menghasilkan informasi yang bermanfaat.</p>
+</section>
+<hr class="docutils" />
 <section id="about-me">
 <h2>🧑‍💻 About Me<a class="headerlink" href="#about-me" title="Link to this heading">#</a></h2>
 <p>Halo! Saya <strong>Rohman Maulana</strong>, mahasiswa <strong>Teknik Informatika, Universitas Trunojoyo Madura</strong>.</p>
-<p>Jupyter Book ini saya gunakan sebagai <strong>dokumentasi pembelajaran dan pengerjaan tugas pada mata kuliah PPW A</strong>, khususnya dalam mempelajari bagaimana data dapat diolah, dianalisis, dan menghasilkan informasi yang bermanfaat.</p>
-<p>Melalui project ini, saya akan mengeksplorasi berbagai konsep dalam <strong>Data Mining</strong>, mulai dari pengumpulan data, preprocessing, eksplorasi data, hingga penerapan metode dan algoritma untuk menemukan pola atau informasi dari sebuah dataset.</p>
+<p>Jupyter Book ini saya gunakan sebagai <strong>dokumentasi pembelajaran dan pengerjaan tugas pada mata kuliah PPW A</strong>, khususnya dalam mempelajari konsep dan penerapan Web Mining.</p>
+<p>Melalui project ini, saya akan mengeksplorasi berbagai tahapan dalam pengolahan data web, mulai dari:</p>
+<ul class="simple">
+<li><p><strong>Web Crawling dan Web Scraping:</strong> Mengumpulkan data dari berbagai halaman website.</p></li>
+<li><p><strong>Data Preprocessing:</strong> Membersihkan dan mempersiapkan data agar dapat dianalisis.</p></li>
+<li><p><strong>Text Mining:</strong> Mengolah teks untuk memperoleh informasi dan pola yang terdapat di dalamnya.</p></li>
+<li><p><strong>Ekstraksi Fitur:</strong> Mengubah data teks menjadi bentuk numerik menggunakan metode seperti <em>CountVectorizer</em> dan TF-IDF.</p></li>
+<li><p><strong>Eksplorasi dan Analisis Data:</strong> Memahami karakteristik data melalui statistik dan visualisasi.</p></li>
+<li><p><strong>Penerapan Algoritma:</strong> Menggunakan metode pengolahan data dan machine learning untuk menemukan pola atau informasi dari dataset.</p></li>
+</ul>
 </section>
 <hr class="docutils" />
-<section id="let-s-explore-the-data">
-<h2>💻 Let’s Explore the Data!<a class="headerlink" href="#let-s-explore-the-data" title="Link to this heading">#</a></h2>
+<section id="let-s-explore-the-web-data">
+<h2>💻 Let’s Explore the Web Data!<a class="headerlink" href="#let-s-explore-the-web-data" title="Link to this heading">#</a></h2>
 <p>Jupyter Book ini akan menjadi tempat saya menyimpan berbagai <strong>catatan, eksperimen, analisis, visualisasi, serta hasil pembelajaran</strong> selama mengikuti mata kuliah PPW A.</p>
-<p>Mari kita mulai perjalanan untuk menemukan <strong>pola, insight, dan pengetahuan dari data!</strong> 🚀📊</p>
+<p>Melalui project Web Mining ini, saya berharap dapat memahami bagaimana data dari internet dikumpulkan, dibersihkan, diolah, dan dianalisis sehingga dapat menghasilkan pengetahuan yang bermanfaat.</p>
+<p>Mari kita mulai perjalanan untuk menemukan <strong>pola, insight, dan pengetahuan dari data web!</strong> 🚀📊</p>
 <hr class="docutils" />
 <section id="rohman-maulana">
 <h3>👨‍💻 Rohman Maulana<a class="headerlink" href="#rohman-maulana" title="Link to this heading">#</a></h3>
-<p><strong>230411100140</strong>
-<strong>Teknik Informatika — Universitas Trunojoyo Madura</strong>
-<strong>PPW A</strong></p>
+<p><strong>230411100140</strong></p>
+<p><strong>Teknik Informatika — Universitas Trunojoyo Madura</strong></p>
+<p><strong>PPW A</strong></p>
 </section>
 </section>
 </section>
@@ -523,8 +549,9 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apa-itu-web-mining">🌐 Apa Itu Web Mining?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#about-me">🧑‍💻 About Me</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#let-s-explore-the-data">💻 Let’s Explore the Data!</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#let-s-explore-the-web-data">💻 Let’s Explore the Web Data!</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rohman-maulana">👨‍💻 Rohman Maulana</a></li>
 </ul>
 </li>

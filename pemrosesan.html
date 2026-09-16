@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>1. Data Understanding &#8212; Data Mining</title>
+    <title>Ekstraksi Fitur TF-IDF &amp; PCA Berita &#8212; Data Mining</title>
   
   
   
@@ -200,16 +200,13 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="intro.html">
-                    👋 Hello, I’m Rohman Maulana!
+                    Intro
                 </a>
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="crawling.html">Web Crawling Berita Detik</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">1. Data Understanding</a></li>
-
-
-
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Data Processing</a></li>
 </ul>
 
     </div>
@@ -395,7 +392,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>1. Data Understanding</h1>
+    <h1>Ekstraksi Fitur TF-IDF & PCA Berita</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -405,38 +402,37 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">1. Data Understanding</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#struktur-dataset">1.1 Struktur Dataset</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kualitas-data-missing-value-duplikat">1.2 Kualitas Data: Missing Value &amp; Duplikat</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#distribusi-label">1.3 Distribusi Label</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#statistik-panjang-teks">1.4 Statistik Panjang Teks</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inspeksi-konten-cek-noise-hasil-crawling">1.5 Inspeksi Konten (Cek Noise Hasil Crawling)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-understanding">1. Data Understanding</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#struktur-dataset">1.1 Struktur Dataset</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kualitas-data-missing-value-duplikat">1.2 Kualitas Data: Missing Value &amp; Duplikat</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distribusi-label">1.3 Distribusi Label</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#statistik-panjang-teks">1.4 Statistik Panjang Teks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inspeksi-konten-cek-noise-hasil-crawling">1.5 Inspeksi Konten (Cek Noise Hasil Crawling)</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#data-cleaning-preprocessing">2. Data Cleaning &amp; Preprocessing</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#noise-removal">2.1 Noise Removal</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#case-folding-cleansing">2.2 Case Folding &amp; Cleansing</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tokenizing">2.3 Tokenizing</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stopword-removal">2.4 Stopword Removal</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stemming">2.5 Stemming</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gabungkan-kembali-token-menjadi-teks-bersih">2.6 Gabungkan Kembali Token Menjadi Teks Bersih</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cek-hasil-preprocessing">2.7 Cek Hasil Preprocessing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-cleaning-preprocessing">2. Data Cleaning &amp; Preprocessing</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#noise-removal">2.1 Noise Removal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#case-folding-cleansing">2.2 Case Folding &amp; Cleansing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tokenizing">2.3 Tokenizing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stopword-removal">2.4 Stopword Removal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stemming">2.5 Stemming</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gabungkan-kembali-token-menjadi-teks-bersih">2.6 Gabungkan Kembali Token Menjadi Teks Bersih</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cek-hasil-preprocessing">2.7 Cek Hasil Preprocessing</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ekstraksi-fitur-representasi-teks">3. Ekstraksi Fitur &amp; Representasi Teks</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pembuatan-tabel-1-binary-document-term-matrix">3.2 Pembuatan Tabel 1: Binary Document-Term Matrix</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pembuatan-tabel-2-term-frequency-matrix-bag-of-words">3.3 Pembuatan Tabel 2: Term Frequency Matrix / Bag of Words</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pembuatan-tabel-3-tf-idf-matrix">3.4 Pembuatan Tabel 3: TF-IDF Matrix</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#verifikasi-matriks-tidak-nol-semua-hanya-sparse">Verifikasi: Matriks Tidak Nol Semua (hanya sparse)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ekstraksi-fitur-representasi-teks">3. Ekstraksi Fitur &amp; Representasi Teks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pembuatan-tabel-1-binary-document-term-matrix">3.2 Pembuatan Tabel 1: Binary Document-Term Matrix</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pembuatan-tabel-2-term-frequency-matrix-bag-of-words">3.3 Pembuatan Tabel 2: Term Frequency Matrix / Bag of Words</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pembuatan-tabel-3-tf-idf-matrix">3.4 Pembuatan Tabel 3: TF-IDF Matrix</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#verifikasi-matriks-tidak-nol-semua-hanya-sparse">Verifikasi: Matriks Tidak Nol Semua (hanya sparse)</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pembuatan-tabel-4-principal-component-analysis-pca">4. Pembuatan Tabel 4: Principal Component Analysis (PCA)</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi-sebaran-dokumen-pc1-vs-pc2">Visualisasi Sebaran Dokumen (PC1 vs PC2)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#perbandingan-jumlah-kolom-sebelum-dan-sesudah-pca">Perbandingan Jumlah Kolom Sebelum dan Sesudah PCA</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pembuatan-tabel-4-principal-component-analysis-pca">4. Pembuatan Tabel 4: Principal Component Analysis (PCA)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi-sebaran-dokumen-pc1-vs-pc2">Visualisasi Sebaran Dokumen (PC1 vs PC2)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#perbandingan-jumlah-kolom-sebelum-dan-sesudah-pca">Perbandingan Jumlah Kolom Sebelum dan Sesudah PCA</a></li>
 </ul>
 </li>
 </ul>
-
             </nav>
         </div>
     </div>
@@ -447,8 +443,10 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="data-understanding">
-<h1>1. Data Understanding<a class="headerlink" href="#data-understanding" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="ekstraksi-fitur-tf-idf-pca-berita">
+<h1>Ekstraksi Fitur TF-IDF &amp; PCA Berita<a class="headerlink" href="#ekstraksi-fitur-tf-idf-pca-berita" title="Link to this heading">#</a></h1>
+<section id="data-understanding">
+<h2>1. Data Understanding<a class="headerlink" href="#data-understanding" title="Link to this heading">#</a></h2>
 <p>Data Understanding adalah tahap awal dalam proses data mining/NLP untuk memahami
 karakteristik dataset sebelum masuk ke preprocessing. Tujuannya:</p>
 <ul class="simple">
@@ -528,7 +526,7 @@ stemming) akan ditentukan dari temuan di sini.</p>
 </div></div></div>
 </div>
 <section id="struktur-dataset">
-<h2>1.1 Struktur Dataset<a class="headerlink" href="#struktur-dataset" title="Link to this heading">#</a></h2>
+<h3>1.1 Struktur Dataset<a class="headerlink" href="#struktur-dataset" title="Link to this heading">#</a></h3>
 <p>Mengecek jumlah baris (dokumen berita), jumlah kolom, serta tipe data tiap kolom.
 Ini untuk memastikan kolom teks (<code class="docutils literal notranslate"><span class="pre">isi_berita</span></code>) dan kolom label (<code class="docutils literal notranslate"><span class="pre">label</span></code>) terbaca
 dengan tipe data yang benar (string/object), bukan numerik atau tipe lain yang
@@ -569,7 +567,7 @@ memory usage: 4.8+ KB
 </div>
 </section>
 <section id="kualitas-data-missing-value-duplikat">
-<h2>1.2 Kualitas Data: Missing Value &amp; Duplikat<a class="headerlink" href="#kualitas-data-missing-value-duplikat" title="Link to this heading">#</a></h2>
+<h3>1.2 Kualitas Data: Missing Value &amp; Duplikat<a class="headerlink" href="#kualitas-data-missing-value-duplikat" title="Link to this heading">#</a></h3>
 <p>Mengecek apakah ada data kosong (missing value) pada kolom teks atau label,
 serta apakah ada berita yang terduplikasi. Data yang mengandung missing value
 atau duplikat perlu ditangani (dihapus/diisi) sebelum lanjut ke preprocessing,
@@ -597,7 +595,7 @@ Jumlah baris duplikat (berdasarkan isi_berita): 0
 </div>
 </section>
 <section id="distribusi-label">
-<h2>1.3 Distribusi Label<a class="headerlink" href="#distribusi-label" title="Link to this heading">#</a></h2>
+<h3>1.3 Distribusi Label<a class="headerlink" href="#distribusi-label" title="Link to this heading">#</a></h3>
 <p>Mengecek jumlah dokumen pada tiap kelas/label (<code class="docutils literal notranslate"><span class="pre">sport</span></code> dan <code class="docutils literal notranslate"><span class="pre">finance</span></code>). Distribusi
 label penting diketahui di awal karena:</p>
 <ul class="simple">
@@ -630,7 +628,7 @@ Name: count, dtype: int64
 </div>
 </section>
 <section id="statistik-panjang-teks">
-<h2>1.4 Statistik Panjang Teks<a class="headerlink" href="#statistik-panjang-teks" title="Link to this heading">#</a></h2>
+<h3>1.4 Statistik Panjang Teks<a class="headerlink" href="#statistik-panjang-teks" title="Link to this heading">#</a></h3>
 <p>Mengecek panjang (jumlah karakter) tiap dokumen berita: nilai minimum, maksimum,
 rata-rata, dan sebarannya. Ini berguna untuk:</p>
 <ul class="simple">
@@ -667,7 +665,7 @@ Name: panjang_teks, dtype: float64
 </div>
 </section>
 <section id="inspeksi-konten-cek-noise-hasil-crawling">
-<h2>1.5 Inspeksi Konten (Cek Noise Hasil Crawling)<a class="headerlink" href="#inspeksi-konten-cek-noise-hasil-crawling" title="Link to this heading">#</a></h2>
+<h3>1.5 Inspeksi Konten (Cek Noise Hasil Crawling)<a class="headerlink" href="#inspeksi-konten-cek-noise-hasil-crawling" title="Link to this heading">#</a></h3>
 <p>Melihat langsung contoh isi berita per label untuk mengecek pola-pola noise
 yang biasanya ikut terambil saat crawling, seperti kata “ADVERTISEMENT”,
 “SCROLL TO CONTINUE WITH CONTENT”, frasa “Baca juga: …”, atau karakter
@@ -722,7 +720,7 @@ Note: you may need to restart the kernel to use updated packages.
 </section>
 </section>
 <section id="data-cleaning-preprocessing">
-<h1>2. Data Cleaning &amp; Preprocessing<a class="headerlink" href="#data-cleaning-preprocessing" title="Link to this heading">#</a></h1>
+<h2>2. Data Cleaning &amp; Preprocessing<a class="headerlink" href="#data-cleaning-preprocessing" title="Link to this heading">#</a></h2>
 <p>Setelah memahami karakteristik data di tahap sebelumnya, tahap ini bertujuan
 membersihkan dan menyeragamkan teks berita agar siap diubah menjadi fitur numerik
 (TF-IDF). Tanpa tahap ini, noise (iklan, tag crawling, tanda baca, kata umum)
@@ -737,7 +735,7 @@ akan ikut masuk ke vocabulary dan mengganggu kualitas representasi teks.</p>
 <li><p>Stemming — ubah kata berimbuhan ke bentuk dasar</p></li>
 </ol>
 <section id="noise-removal">
-<h2>2.1 Noise Removal<a class="headerlink" href="#noise-removal" title="Link to this heading">#</a></h2>
+<h3>2.1 Noise Removal<a class="headerlink" href="#noise-removal" title="Link to this heading">#</a></h3>
 <p>Berdasarkan temuan di Data Understanding (Cell 6), dataset ini mengandung noise
 khas hasil crawling seperti:</p>
 <ul class="simple">
@@ -807,7 +805,7 @@ supaya tidak dianggap sebagai kata bermakna oleh model.</p>
 </div>
 </section>
 <section id="case-folding-cleansing">
-<h2>2.2 Case Folding &amp; Cleansing<a class="headerlink" href="#case-folding-cleansing" title="Link to this heading">#</a></h2>
+<h3>2.2 Case Folding &amp; Cleansing<a class="headerlink" href="#case-folding-cleansing" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p><strong>Case folding</strong>: mengubah semua huruf menjadi huruf kecil, supaya kata yang
 sama tapi beda kapitalisasi (mis. “Jakarta” dan “jakarta”) dihitung sebagai
@@ -869,7 +867,7 @@ umumnya tidak berkontribusi signifikan terhadap makna kategori berita
 </div>
 </section>
 <section id="tokenizing">
-<h2>2.3 Tokenizing<a class="headerlink" href="#tokenizing" title="Link to this heading">#</a></h2>
+<h3>2.3 Tokenizing<a class="headerlink" href="#tokenizing" title="Link to this heading">#</a></h3>
 <p>Memecah setiap dokumen berita menjadi daftar kata (token). Ini adalah langkah
 persiapan sebelum stopword removal dan stemming, karena kedua proses tersebut
 bekerja per kata, bukan per kalimat/dokumen utuh.</p>
@@ -920,7 +918,7 @@ bekerja per kata, bukan per kalimat/dokumen utuh.</p>
 </div>
 </section>
 <section id="stopword-removal">
-<h2>2.4 Stopword Removal<a class="headerlink" href="#stopword-removal" title="Link to this heading">#</a></h2>
+<h3>2.4 Stopword Removal<a class="headerlink" href="#stopword-removal" title="Link to this heading">#</a></h3>
 <p>Menghapus kata-kata umum Bahasa Indonesia yang sering muncul di hampir semua
 dokumen tapi tidak membawa informasi pembeda antar kategori, misalnya “yang”,
 “di”, “dan”, “ke”, “dari”. Menggunakan library Sastrawi yang memang dibuat
@@ -980,7 +978,7 @@ khusus untuk Bahasa Indonesia.</p>
 </div>
 </section>
 <section id="stemming">
-<h2>2.5 Stemming<a class="headerlink" href="#stemming" title="Link to this heading">#</a></h2>
+<h3>2.5 Stemming<a class="headerlink" href="#stemming" title="Link to this heading">#</a></h3>
 <p>Mengubah kata berimbuhan menjadi kata dasarnya, misalnya “bertanding” → “tanding”,
 “kekuatan” → “kuat”. Tujuannya agar variasi bentuk kata dari akar yang sama
 dihitung sebagai satu fitur yang sama saat ekstraksi fitur nanti.</p>
@@ -1140,7 +1138,7 @@ jadi mungkin butuh waktu beberapa menit untuk selesai.</p>
 </div>
 </section>
 <section id="gabungkan-kembali-token-menjadi-teks-bersih">
-<h2>2.6 Gabungkan Kembali Token Menjadi Teks Bersih<a class="headerlink" href="#gabungkan-kembali-token-menjadi-teks-bersih" title="Link to this heading">#</a></h2>
+<h3>2.6 Gabungkan Kembali Token Menjadi Teks Bersih<a class="headerlink" href="#gabungkan-kembali-token-menjadi-teks-bersih" title="Link to this heading">#</a></h3>
 <p>Setelah semua kata melalui stopword removal dan stemming, token-token tersebut
 digabungkan kembali menjadi satu string per dokumen. Format ini yang nantinya
 menjadi input untuk <code class="docutils literal notranslate"><span class="pre">TfidfVectorizer</span></code> di tahap Ekstraksi Fitur &amp; Representasi TF-IDF.</p>
@@ -1196,7 +1194,7 @@ menjadi input untuk <code class="docutils literal notranslate"><span class="pre"
 </div>
 </section>
 <section id="cek-hasil-preprocessing">
-<h2>2.7 Cek Hasil Preprocessing<a class="headerlink" href="#cek-hasil-preprocessing" title="Link to this heading">#</a></h2>
+<h3>2.7 Cek Hasil Preprocessing<a class="headerlink" href="#cek-hasil-preprocessing" title="Link to this heading">#</a></h3>
 <p>Membandingkan teks asli dengan teks hasil preprocessing secara utuh untuk satu
 sampel dokumen, sebagai validasi manual bahwa proses cleaning, stopword removal,
 dan stemming sudah berjalan sesuai harapan sebelum lanjut ke tahap ekstraksi fitur.</p>
@@ -1223,7 +1221,7 @@ jakarta putri kusuma wardani percaya diri komposisi regu putri pilih pbsi asi ga
 </section>
 </section>
 <section id="ekstraksi-fitur-representasi-teks">
-<h1>3. Ekstraksi Fitur &amp; Representasi Teks<a class="headerlink" href="#ekstraksi-fitur-representasi-teks" title="Link to this heading">#</a></h1>
+<h2>3. Ekstraksi Fitur &amp; Representasi Teks<a class="headerlink" href="#ekstraksi-fitur-representasi-teks" title="Link to this heading">#</a></h2>
 <p>Setelah teks melalui tahap preprocessing (cleaning, stopword removal, stemming),
 langkah berikutnya adalah mengubah teks menjadi representasi numerik agar bisa
 diproses oleh algoritma machine learning. Tahap ini terdiri dari:</p>
@@ -1306,7 +1304,7 @@ Contoh 20 kata pertama dalam vocabulary:
 </div>
 </div>
 <section id="pembuatan-tabel-1-binary-document-term-matrix">
-<h2>3.2 Pembuatan Tabel 1: Binary Document-Term Matrix<a class="headerlink" href="#pembuatan-tabel-1-binary-document-term-matrix" title="Link to this heading">#</a></h2>
+<h3>3.2 Pembuatan Tabel 1: Binary Document-Term Matrix<a class="headerlink" href="#pembuatan-tabel-1-binary-document-term-matrix" title="Link to this heading">#</a></h3>
 <p>Binary Document-Term Matrix menunjukkan apakah sebuah kata muncul dalam sebuah dokumen.
 Setiap baris mewakili satu artikel, sedangkan setiap kolom mewakili satu kata unik.
 Nilai yang digunakan hanya:</p>
@@ -1507,7 +1505,7 @@ Kolom <code class="docutils literal notranslate"><span class="pre">label</span><
 </div>
 </section>
 <section id="pembuatan-tabel-2-term-frequency-matrix-bag-of-words">
-<h2>3.3 Pembuatan Tabel 2: Term Frequency Matrix / Bag of Words<a class="headerlink" href="#pembuatan-tabel-2-term-frequency-matrix-bag-of-words" title="Link to this heading">#</a></h2>
+<h3>3.3 Pembuatan Tabel 2: Term Frequency Matrix / Bag of Words<a class="headerlink" href="#pembuatan-tabel-2-term-frequency-matrix-bag-of-words" title="Link to this heading">#</a></h3>
 <p>Bag of Words merepresentasikan dokumen berdasarkan jumlah kemunculan setiap kata.
 Berbeda dari matriks biner, nilai pada tabel ini dapat lebih besar dari satu.
 Misalnya, jika sebuah kata muncul tiga kali dalam satu artikel, maka nilai fitur
@@ -1709,7 +1707,7 @@ Tingkat sparsity: 97.58%
 </div>
 </section>
 <section id="pembuatan-tabel-3-tf-idf-matrix">
-<h2>3.4 Pembuatan Tabel 3: TF-IDF Matrix<a class="headerlink" href="#pembuatan-tabel-3-tf-idf-matrix" title="Link to this heading">#</a></h2>
+<h3>3.4 Pembuatan Tabel 3: TF-IDF Matrix<a class="headerlink" href="#pembuatan-tabel-3-tf-idf-matrix" title="Link to this heading">#</a></h3>
 <p>TF-IDF (Term Frequency–Inverse Document Frequency) menyempurnakan Bag of Words
 dengan mempertimbangkan seberapa penting sebuah kata terhadap suatu dokumen,
 relatif terhadap keseluruhan korpus. Kata yang sering muncul di satu dokumen tapi
@@ -1910,7 +1908,7 @@ seberapa jarang kata <code class="docutils literal notranslate"><span class="pre
 </div>
 </section>
 <section id="verifikasi-matriks-tidak-nol-semua-hanya-sparse">
-<h2>Verifikasi: Matriks Tidak Nol Semua (hanya sparse)<a class="headerlink" href="#verifikasi-matriks-tidak-nol-semua-hanya-sparse" title="Link to this heading">#</a></h2>
+<h3>Verifikasi: Matriks Tidak Nol Semua (hanya sparse)<a class="headerlink" href="#verifikasi-matriks-tidak-nol-semua-hanya-sparse" title="Link to this heading">#</a></h3>
 <p>Karena vocabulary disusun alfabetis, kolom-kolom pertama sering berisi kata-kata
 langka yang wajar tidak muncul di beberapa dokumen pertama — bukan berarti
 matriksnya kosong. Berikut verifikasi total kemunculan kata dan tampilan yang
@@ -2284,7 +2282,7 @@ Contoh Binary Matrix untuk kata-kata yang sering muncul:
 </section>
 </section>
 <section id="pembuatan-tabel-4-principal-component-analysis-pca">
-<h1>4. Pembuatan Tabel 4: Principal Component Analysis (PCA)<a class="headerlink" href="#pembuatan-tabel-4-principal-component-analysis-pca" title="Link to this heading">#</a></h1>
+<h2>4. Pembuatan Tabel 4: Principal Component Analysis (PCA)<a class="headerlink" href="#pembuatan-tabel-4-principal-component-analysis-pca" title="Link to this heading">#</a></h2>
 <p>TF-IDF Matrix yang dihasilkan sebelumnya berdimensi tinggi (jumlah kolom = jumlah
 kata unik dalam vocabulary) dan bersifat sparse (banyak nilai nol). Dimensi yang
 terlalu tinggi dapat menyulitkan visualisasi data dan meningkatkan beban komputasi
@@ -2531,7 +2529,7 @@ Total variansi yang dijelaskan: 0.9513
 </div></div></div>
 </div>
 <section id="visualisasi-sebaran-dokumen-pc1-vs-pc2">
-<h2>Visualisasi Sebaran Dokumen (PC1 vs PC2)<a class="headerlink" href="#visualisasi-sebaran-dokumen-pc1-vs-pc2" title="Link to this heading">#</a></h2>
+<h3>Visualisasi Sebaran Dokumen (PC1 vs PC2)<a class="headerlink" href="#visualisasi-sebaran-dokumen-pc1-vs-pc2" title="Link to this heading">#</a></h3>
 <p>Untuk melihat apakah dokumen dari kelas berbeda (<code class="docutils literal notranslate"><span class="pre">sport</span></code> dan <code class="docutils literal notranslate"><span class="pre">finance</span></code>) terpisah
 secara alami setelah direduksi dimensinya, dibuat scatter plot menggunakan dua
 komponen utama pertama (PC1 dan PC2).</p>
@@ -2684,7 +2682,7 @@ Total variansi yang dijelaskan (5 komponen): 11.69%
 </div>
 </section>
 <section id="perbandingan-jumlah-kolom-sebelum-dan-sesudah-pca">
-<h2>Perbandingan Jumlah Kolom Sebelum dan Sesudah PCA<a class="headerlink" href="#perbandingan-jumlah-kolom-sebelum-dan-sesudah-pca" title="Link to this heading">#</a></h2>
+<h3>Perbandingan Jumlah Kolom Sebelum dan Sesudah PCA<a class="headerlink" href="#perbandingan-jumlah-kolom-sebelum-dan-sesudah-pca" title="Link to this heading">#</a></h3>
 <p>Berikut perbandingan jumlah fitur (kolom) sebelum PCA (TF-IDF Matrix) dan sesudah
 PCA (5 komponen utama), untuk menunjukkan seberapa besar reduksi dimensi yang terjadi.</p>
 <div class="cell docutils container">
@@ -2767,6 +2765,7 @@ Lokasi: c:\Users\acer\OneDrive\Documents\DOKUMEN KULIAH\Semester 7\ppw\hasil_pca
 </div>
 </section>
 </section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -2823,38 +2822,37 @@ Lokasi: c:\Users\acer\OneDrive\Documents\DOKUMEN KULIAH\Semester 7\ppw\hasil_pca
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">1. Data Understanding</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#struktur-dataset">1.1 Struktur Dataset</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kualitas-data-missing-value-duplikat">1.2 Kualitas Data: Missing Value &amp; Duplikat</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#distribusi-label">1.3 Distribusi Label</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#statistik-panjang-teks">1.4 Statistik Panjang Teks</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inspeksi-konten-cek-noise-hasil-crawling">1.5 Inspeksi Konten (Cek Noise Hasil Crawling)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-understanding">1. Data Understanding</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#struktur-dataset">1.1 Struktur Dataset</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kualitas-data-missing-value-duplikat">1.2 Kualitas Data: Missing Value &amp; Duplikat</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distribusi-label">1.3 Distribusi Label</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#statistik-panjang-teks">1.4 Statistik Panjang Teks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inspeksi-konten-cek-noise-hasil-crawling">1.5 Inspeksi Konten (Cek Noise Hasil Crawling)</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#data-cleaning-preprocessing">2. Data Cleaning &amp; Preprocessing</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#noise-removal">2.1 Noise Removal</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#case-folding-cleansing">2.2 Case Folding &amp; Cleansing</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tokenizing">2.3 Tokenizing</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stopword-removal">2.4 Stopword Removal</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stemming">2.5 Stemming</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gabungkan-kembali-token-menjadi-teks-bersih">2.6 Gabungkan Kembali Token Menjadi Teks Bersih</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cek-hasil-preprocessing">2.7 Cek Hasil Preprocessing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-cleaning-preprocessing">2. Data Cleaning &amp; Preprocessing</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#noise-removal">2.1 Noise Removal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#case-folding-cleansing">2.2 Case Folding &amp; Cleansing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tokenizing">2.3 Tokenizing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stopword-removal">2.4 Stopword Removal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stemming">2.5 Stemming</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gabungkan-kembali-token-menjadi-teks-bersih">2.6 Gabungkan Kembali Token Menjadi Teks Bersih</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cek-hasil-preprocessing">2.7 Cek Hasil Preprocessing</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ekstraksi-fitur-representasi-teks">3. Ekstraksi Fitur &amp; Representasi Teks</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pembuatan-tabel-1-binary-document-term-matrix">3.2 Pembuatan Tabel 1: Binary Document-Term Matrix</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pembuatan-tabel-2-term-frequency-matrix-bag-of-words">3.3 Pembuatan Tabel 2: Term Frequency Matrix / Bag of Words</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pembuatan-tabel-3-tf-idf-matrix">3.4 Pembuatan Tabel 3: TF-IDF Matrix</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#verifikasi-matriks-tidak-nol-semua-hanya-sparse">Verifikasi: Matriks Tidak Nol Semua (hanya sparse)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ekstraksi-fitur-representasi-teks">3. Ekstraksi Fitur &amp; Representasi Teks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pembuatan-tabel-1-binary-document-term-matrix">3.2 Pembuatan Tabel 1: Binary Document-Term Matrix</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pembuatan-tabel-2-term-frequency-matrix-bag-of-words">3.3 Pembuatan Tabel 2: Term Frequency Matrix / Bag of Words</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pembuatan-tabel-3-tf-idf-matrix">3.4 Pembuatan Tabel 3: TF-IDF Matrix</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#verifikasi-matriks-tidak-nol-semua-hanya-sparse">Verifikasi: Matriks Tidak Nol Semua (hanya sparse)</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pembuatan-tabel-4-principal-component-analysis-pca">4. Pembuatan Tabel 4: Principal Component Analysis (PCA)</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi-sebaran-dokumen-pc1-vs-pc2">Visualisasi Sebaran Dokumen (PC1 vs PC2)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#perbandingan-jumlah-kolom-sebelum-dan-sesudah-pca">Perbandingan Jumlah Kolom Sebelum dan Sesudah PCA</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pembuatan-tabel-4-principal-component-analysis-pca">4. Pembuatan Tabel 4: Principal Component Analysis (PCA)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi-sebaran-dokumen-pc1-vs-pc2">Visualisasi Sebaran Dokumen (PC1 vs PC2)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#perbandingan-jumlah-kolom-sebelum-dan-sesudah-pca">Perbandingan Jumlah Kolom Sebelum dan Sesudah PCA</a></li>
 </ul>
 </li>
 </ul>
-
   </nav></div>
 
 </div></div>
