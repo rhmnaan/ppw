@@ -4,7 +4,5 @@ root: intro
 
 chapters:
   - file: crawling.ipynb
-    title: "Web Crawling Berita Detik"
 
   - file: pemrosesan.ipynb
-    title: "Data Processing"
