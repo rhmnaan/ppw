@@ -37,11 +37,15 @@ nbclient.exceptions.CellTimeoutError: A cell timed out while it was being execut
 The message was: Cell execution timed out.
 Here is a preview of the cell contents:
 -------------------
-data_finance = crawling_kategori(
-    finance_url,
-    "finance.detik.com",
-    "finance",
-    5
-)
+from Sastrawi.Stemmer.StemmerFactory import StemmerFactory
+
+stemmer_factory = StemmerFactory()
+stemmer = stemmer_factory.create_stemmer()
+
+def stem_tokens(tokens):
+    return [stemmer.stem(word) for word in tokens]
+
+df['tokens_stemmed'] = df['tokens_no_stopwords'].apply(stem_tokens)
+df[['tokens_no_stopwords', 'tokens_stemmed']].head(2)
 -------------------
 

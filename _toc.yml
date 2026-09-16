@@ -5,3 +5,5 @@ format: jb-book
 root: intro
 chapters:
   - file: crawling.ipynb
+  - file: pemrosesan.ipynb
+
