@@ -6,3 +6,5 @@ chapters:
   - file: crawling.ipynb
 
   - file: pemrosesan.ipynb
+
+  - file: klasifikasi_skipgram_naive_bayes.ipynb
