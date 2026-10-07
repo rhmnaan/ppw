@@ -1,3 +1,5 @@
 _build/
 .doctrees/
 jupyter_execute/
+model_tersimpan/
+klasifikasi_berita/

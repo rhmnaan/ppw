@@ -28,7 +28,7 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=720ed60b" />
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
@@ -39,6 +39,7 @@
     <link rel="stylesheet" type="text/css" href="_static/basic.css?v=d2032c04" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=720ed60b" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
@@ -436,6 +437,16 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#perbandingan-jumlah-kolom-sebelum-dan-sesudah-pca">Perbandingan Jumlah Kolom Sebelum dan Sesudah PCA</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pemodelan-klasifikasi-naive-bayes-tf-idf">5. Pemodelan Klasifikasi Naive Bayes (TF-IDF)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pembagian-data-latih-dan-data-uji">5.1 Pembagian Data Latih dan Data Uji</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#representasi-tf-idf-untuk-data-latih-dan-data-uji">5.2 Representasi TF-IDF untuk Data Latih dan Data Uji</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#training-model-multinomial-naive-bayes">5.3 Training Model Multinomial Naive Bayes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluasi-model">5.4 Evaluasi Model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kata-paling-berpengaruh-pada-tiap-kelas">5.5 Kata Paling Berpengaruh pada Tiap Kelas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-prediksi-pada-data-uji">5.6 Contoh Prediksi pada Data Uji</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#validasi-silang-cross-validation">5.7 Validasi Silang (Cross-Validation)</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -703,31 +714,15 @@ Jakarta - Penutupan operasional Bandara Soekarno-Hatta beserta sejumlah bandara 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting Sastrawi
-  Using cached Sastrawi-1.0.1-py2.py3-none-any.whl.metadata (909 bytes)
-Collecting nltk
-  Using cached nltk-3.10.3-py3-none-any.whl.metadata (3.2 kB)
-Collecting defusedxml (from nltk)
-  Using cached defusedxml-0.7.1-py2.py3-none-any.whl.metadata (32 kB)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: Sastrawi in c:\users\acer\appdata\local\programs\python\python311\lib\site-packages (1.0.1)
+Requirement already satisfied: nltk in c:\users\acer\appdata\local\programs\python\python311\lib\site-packages (3.10.3)
+Requirement already satisfied: defusedxml in c:\users\acer\appdata\local\programs\python\python311\lib\site-packages (from nltk) (0.7.1)
 Requirement already satisfied: click in c:\users\acer\appdata\local\programs\python\python311\lib\site-packages (from nltk) (8.1.7)
-Collecting joblib (from nltk)
-  Downloading joblib-1.6.0-py3-none-any.whl.metadata (6.5 kB)
-Collecting regex&gt;=2021.8.3 (from nltk)
-  Downloading regex-2026.9.10-cp311-cp311-win_amd64.whl.metadata (41 kB)
-Collecting tqdm (from nltk)
-  Downloading tqdm-4.70.1-py3-none-any.whl.metadata (57 kB)
+Requirement already satisfied: joblib in c:\users\acer\appdata\local\programs\python\python311\lib\site-packages (from nltk) (1.6.0)
+Requirement already satisfied: regex&gt;=2021.8.3 in c:\users\acer\appdata\local\programs\python\python311\lib\site-packages (from nltk) (2026.9.10)
+Requirement already satisfied: tqdm in c:\users\acer\appdata\local\programs\python\python311\lib\site-packages (from nltk) (4.70.1)
 Requirement already satisfied: colorama in c:\users\acer\appdata\local\programs\python\python311\lib\site-packages (from click-&gt;nltk) (0.4.6)
-Collecting cloudpickle&gt;=3.0 (from joblib-&gt;nltk)
-  Downloading cloudpickle-3.1.2-py3-none-any.whl.metadata (7.1 kB)
-Using cached Sastrawi-1.0.1-py2.py3-none-any.whl (209 kB)
-Using cached nltk-3.10.3-py3-none-any.whl (1.8 MB)
-Downloading regex-2026.9.10-cp311-cp311-win_amd64.whl (278 kB)
-Using cached defusedxml-0.7.1-py2.py3-none-any.whl (25 kB)
-Downloading joblib-1.6.0-py3-none-any.whl (306 kB)
-Downloading tqdm-4.70.1-py3-none-any.whl (80 kB)
-Downloading cloudpickle-3.1.2-py3-none-any.whl (22 kB)
-Installing collected packages: Sastrawi, tqdm, regex, defusedxml, cloudpickle, joblib, nltk
-Successfully installed Sastrawi-1.0.1 cloudpickle-3.1.2 defusedxml-0.7.1 joblib-1.6.0 nltk-3.10.3 regex-2026.9.10 tqdm-4.70.1
+Requirement already satisfied: cloudpickle&gt;=3.0 in c:\users\acer\appdata\local\programs\python\python311\lib\site-packages (from joblib-&gt;nltk) (3.1.2)
 Note: you may need to restart the kernel to use updated packages.
 </pre></div>
 </div>
@@ -1162,33 +1157,13 @@ disimpan terpisah dan tidak diikutsertakan sebagai fitur teks.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting scikit-learn
-  Downloading scikit_learn-1.9.1-cp311-cp311-win_amd64.whl.metadata (9.3 kB)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: scikit-learn in c:\users\acer\appdata\local\programs\python\python311\lib\site-packages (1.9.1)
 Requirement already satisfied: numpy&gt;=1.24.1 in c:\users\acer\appdata\local\programs\python\python311\lib\site-packages (from scikit-learn) (2.2.4)
 Requirement already satisfied: scipy&gt;=1.10.0 in c:\users\acer\appdata\local\programs\python\python311\lib\site-packages (from scikit-learn) (1.15.2)
 Requirement already satisfied: joblib&gt;=1.4.0 in c:\users\acer\appdata\local\programs\python\python311\lib\site-packages (from scikit-learn) (1.6.0)
-Collecting narwhals&gt;=2.0.1 (from scikit-learn)
-  Downloading narwhals-2.26.0-py3-none-any.whl.metadata (15 kB)
+Requirement already satisfied: narwhals&gt;=2.0.1 in c:\users\acer\appdata\local\programs\python\python311\lib\site-packages (from scikit-learn) (2.26.0)
 Requirement already satisfied: threadpoolctl&gt;=3.5.0 in c:\users\acer\appdata\local\programs\python\python311\lib\site-packages (from scikit-learn) (3.6.0)
 Requirement already satisfied: cloudpickle&gt;=3.0 in c:\users\acer\appdata\local\programs\python\python311\lib\site-packages (from joblib&gt;=1.4.0-&gt;scikit-learn) (3.1.2)
-Downloading scikit_learn-1.9.1-cp311-cp311-win_amd64.whl (8.3 MB)
-   ---------------------------------------- 0.0/8.3 MB ? eta -:--:--
-   -- ------------------------------------- 0.5/8.3 MB 3.4 MB/s eta 0:00:03
-   ----- ---------------------------------- 1.0/8.3 MB 2.8 MB/s eta 0:00:03
-   ------ --------------------------------- 1.3/8.3 MB 2.6 MB/s eta 0:00:03
-   -------- ------------------------------- 1.8/8.3 MB 2.4 MB/s eta 0:00:03
-   ----------- ---------------------------- 2.4/8.3 MB 2.4 MB/s eta 0:00:03
-   ------------- -------------------------- 2.9/8.3 MB 2.5 MB/s eta 0:00:03
-   ----------------- ---------------------- 3.7/8.3 MB 2.6 MB/s eta 0:00:02
-   -------------------- ------------------- 4.2/8.3 MB 2.5 MB/s eta 0:00:02
-   ---------------------- ----------------- 4.7/8.3 MB 2.6 MB/s eta 0:00:02
-   -------------------------- ------------- 5.5/8.3 MB 2.7 MB/s eta 0:00:02
-   ------------------------------ --------- 6.3/8.3 MB 2.8 MB/s eta 0:00:01
-   ----------------------------------- ---- 7.3/8.3 MB 2.9 MB/s eta 0:00:01
-   ---------------------------------------- 8.3/8.3 MB 3.1 MB/s eta 0:00:00
-Downloading narwhals-2.26.0-py3-none-any.whl (474 kB)
-Installing collected packages: narwhals, scikit-learn
-Successfully installed narwhals-2.26.0 scikit-learn-1.9.1
 Note: you may need to restart the kernel to use updated packages.
 </pre></div>
 </div>
@@ -2686,6 +2661,354 @@ Lokasi: c:\Users\acer\OneDrive\Documents\DOKUMEN KULIAH\Semester 7\ppw\hasil_pca
 </div>
 </section>
 </section>
+<section id="pemodelan-klasifikasi-naive-bayes-tf-idf">
+<h2>5. Pemodelan Klasifikasi Naive Bayes (TF-IDF)<a class="headerlink" href="#pemodelan-klasifikasi-naive-bayes-tf-idf" title="Link to this heading">#</a></h2>
+<p>Setelah teks berita direpresentasikan dalam bentuk TF-IDF, langkah selanjutnya adalah membangun model klasifikasi untuk memprediksi kategori berita (<code class="docutils literal notranslate"><span class="pre">sport</span></code> atau <code class="docutils literal notranslate"><span class="pre">finance</span></code>). Algoritma yang digunakan adalah <strong>Multinomial Naive Bayes</strong>, yaitu algoritma probabilistik berbasis Teorema Bayes yang mengasumsikan setiap fitur (kata) saling independen. Algoritma ini sangat umum dipakai untuk klasifikasi teks karena cepat dan bekerja baik pada data berdimensi tinggi yang sparse.</p>
+<p>Urutan proses:</p>
+<ol class="arabic simple">
+<li><p>Pembagian data latih dan data uji</p></li>
+<li><p>Representasi TF-IDF (dipelajari dari data latih saja)</p></li>
+<li><p>Training model Multinomial Naive Bayes</p></li>
+<li><p>Evaluasi model (accuracy, precision, recall, F1-score, confusion matrix)</p></li>
+<li><p>Analisis kata paling berpengaruh pada tiap kelas</p></li>
+<li><p>Validasi silang (cross-validation)</p></li>
+</ol>
+<p>Catatan: model dilatih menggunakan <strong>TF-IDF Matrix</strong>, bukan hasil PCA. Hasil PCA mengandung nilai negatif, sedangkan Multinomial Naive Bayes hanya menerima fitur bernilai non-negatif (seperti frekuensi atau bobot TF-IDF).</p>
+<section id="pembagian-data-latih-dan-data-uji">
+<h3>5.1 Pembagian Data Latih dan Data Uji<a class="headerlink" href="#pembagian-data-latih-dan-data-uji" title="Link to this heading">#</a></h3>
+<p>Dataset dibagi menjadi <strong>80% data latih</strong> dan <strong>20% data uji</strong>. Parameter <code class="docutils literal notranslate"><span class="pre">stratify</span></code> digunakan agar proporsi kelas <code class="docutils literal notranslate"><span class="pre">sport</span></code> dan <code class="docutils literal notranslate"><span class="pre">finance</span></code> pada data latih dan data uji tetap sama dengan dataset aslinya, sedangkan <code class="docutils literal notranslate"><span class="pre">random_state</span></code> dipakai agar hasil pembagian selalu sama setiap notebook dijalankan ulang.</p>
+<p>Pembagian dilakukan <strong>sebelum</strong> TF-IDF dihitung ulang, supaya nilai IDF hanya dipelajari dari data latih dan tidak “mengintip” isi data uji (mencegah data leakage).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.model_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">train_test_split</span>
+
+<span class="n">X_text</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;final_text&#39;</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;label&#39;</span><span class="p">]</span>
+
+<span class="n">X_train_text</span><span class="p">,</span> <span class="n">X_test_text</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span>
+    <span class="n">X_text</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span>
+    <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span>
+    <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span>
+    <span class="n">stratify</span><span class="o">=</span><span class="n">y</span>
+<span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Jumlah data latih:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">X_train_text</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Jumlah data uji  :&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">X_test_text</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Distribusi label data latih:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">y_train</span><span class="o">.</span><span class="n">value_counts</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Distribusi label data uji:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">y_test</span><span class="o">.</span><span class="n">value_counts</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Jumlah data latih: 160
+Jumlah data uji  : 40
+
+Distribusi label data latih:
+label
+finance    80
+sport      80
+Name: count, dtype: int64
+
+Distribusi label data uji:
+label
+finance    20
+sport      20
+Name: count, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="representasi-tf-idf-untuk-data-latih-dan-data-uji">
+<h3>5.2 Representasi TF-IDF untuk Data Latih dan Data Uji<a class="headerlink" href="#representasi-tf-idf-untuk-data-latih-dan-data-uji" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">TfidfVectorizer</span></code> di-<em>fit</em> hanya pada <strong>data latih</strong> (<code class="docutils literal notranslate"><span class="pre">fit_transform</span></code>) untuk mempelajari vocabulary dan nilai IDF. Selanjutnya data uji cukup diubah dengan <code class="docutils literal notranslate"><span class="pre">transform</span></code> menggunakan vocabulary dan IDF yang sama dari data latih. Kata yang hanya muncul di data uji dan tidak ada di vocabulary data latih akan diabaikan.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.feature_extraction.text</span><span class="w"> </span><span class="kn">import</span> <span class="n">TfidfVectorizer</span>
+
+<span class="n">tfidf_nb</span> <span class="o">=</span> <span class="n">TfidfVectorizer</span><span class="p">()</span>
+<span class="n">X_train</span> <span class="o">=</span> <span class="n">tfidf_nb</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X_train_text</span><span class="p">)</span>   <span class="c1"># belajar vocabulary + IDF dari data latih</span>
+<span class="n">X_test</span> <span class="o">=</span> <span class="n">tfidf_nb</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X_test_text</span><span class="p">)</span>         <span class="c1"># data uji hanya di-transform</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ukuran matriks TF-IDF data latih:&quot;</span><span class="p">,</span> <span class="n">X_train</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ukuran matriks TF-IDF data uji  :&quot;</span><span class="p">,</span> <span class="n">X_test</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Jumlah fitur (vocabulary data latih):&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">tfidf_nb</span><span class="o">.</span><span class="n">get_feature_names_out</span><span class="p">()))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ukuran matriks TF-IDF data latih: (160, 4452)
+Ukuran matriks TF-IDF data uji  : (40, 4452)
+Jumlah fitur (vocabulary data latih): 4452
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="training-model-multinomial-naive-bayes">
+<h3>5.3 Training Model Multinomial Naive Bayes<a class="headerlink" href="#training-model-multinomial-naive-bayes" title="Link to this heading">#</a></h3>
+<p>Model dilatih menggunakan matriks TF-IDF data latih. Parameter <code class="docutils literal notranslate"><span class="pre">alpha=1.0</span></code> adalah <em>Laplace smoothing</em> untuk menghindari probabilitas nol pada kata yang tidak pernah muncul di salah satu kelas saat training.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.naive_bayes</span><span class="w"> </span><span class="kn">import</span> <span class="n">MultinomialNB</span>
+
+<span class="n">nb_model</span> <span class="o">=</span> <span class="n">MultinomialNB</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
+<span class="n">nb_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Kelas yang dipelajari model:&quot;</span><span class="p">,</span> <span class="n">nb_model</span><span class="o">.</span><span class="n">classes_</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Prior probabilitas tiap kelas:&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">kelas</span><span class="p">,</span> <span class="n">prior</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">nb_model</span><span class="o">.</span><span class="n">classes_</span><span class="p">,</span> <span class="n">nb_model</span><span class="o">.</span><span class="n">class_log_prior_</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  </span><span class="si">{</span><span class="n">kelas</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">prior</span><span class="p">)</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Kelas yang dipelajari model: [&#39;finance&#39; &#39;sport&#39;]
+Prior probabilitas tiap kelas:
+  finance: 0.5000
+  sport: 0.5000
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="evaluasi-model">
+<h3>5.4 Evaluasi Model<a class="headerlink" href="#evaluasi-model" title="Link to this heading">#</a></h3>
+<p>Model digunakan untuk memprediksi label pada data uji, kemudian hasilnya dibandingkan dengan label sebenarnya. Metrik yang digunakan:</p>
+<ul class="simple">
+<li><p><strong>Accuracy</strong>: persentase prediksi yang benar dari seluruh data uji</p></li>
+<li><p><strong>Precision</strong>: dari semua dokumen yang diprediksi sebagai suatu kelas, berapa yang benar-benar kelas tersebut</p></li>
+<li><p><strong>Recall</strong>: dari semua dokumen yang sebenarnya kelas tersebut, berapa yang berhasil terdeteksi</p></li>
+<li><p><strong>F1-score</strong>: rata-rata harmonik precision dan recall</p></li>
+<li><p><strong>Confusion matrix</strong>: tabel jumlah prediksi benar dan salah untuk tiap kelas</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.metrics</span><span class="w"> </span><span class="kn">import</span> <span class="n">accuracy_score</span><span class="p">,</span> <span class="n">classification_report</span><span class="p">,</span> <span class="n">confusion_matrix</span><span class="p">,</span> <span class="n">ConfusionMatrixDisplay</span>
+
+<span class="n">y_pred</span> <span class="o">=</span> <span class="n">nb_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Accuracy:&quot;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">),</span> <span class="mi">4</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Classification Report:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">classification_report</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">))</span>
+
+<span class="n">cm</span> <span class="o">=</span> <span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="n">nb_model</span><span class="o">.</span><span class="n">classes_</span><span class="p">)</span>
+<span class="n">disp</span> <span class="o">=</span> <span class="n">ConfusionMatrixDisplay</span><span class="p">(</span><span class="n">confusion_matrix</span><span class="o">=</span><span class="n">cm</span><span class="p">,</span> <span class="n">display_labels</span><span class="o">=</span><span class="n">nb_model</span><span class="o">.</span><span class="n">classes_</span><span class="p">)</span>
+<span class="n">disp</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Blues&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Confusion Matrix Naive Bayes (TF-IDF)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Accuracy: 1.0
+
+Classification Report:
+              precision    recall  f1-score   support
+
+     finance       1.00      1.00      1.00        20
+       sport       1.00      1.00      1.00        20
+
+    accuracy                           1.00        40
+   macro avg       1.00      1.00      1.00        40
+weighted avg       1.00      1.00      1.00        40
+</pre></div>
+</div>
+<img alt="_images/c5cc983ee1a5f6632912248bc4716ce12bea21cc9667f62a50b5fc8ab4336b3a.png" src="_images/c5cc983ee1a5f6632912248bc4716ce12bea21cc9667f62a50b5fc8ab4336b3a.png" />
+</div>
+</div>
+</section>
+<section id="kata-paling-berpengaruh-pada-tiap-kelas">
+<h3>5.5 Kata Paling Berpengaruh pada Tiap Kelas<a class="headerlink" href="#kata-paling-berpengaruh-pada-tiap-kelas" title="Link to this heading">#</a></h3>
+<p>Multinomial Naive Bayes menyimpan log-probabilitas setiap kata pada setiap kelas (<code class="docutils literal notranslate"><span class="pre">feature_log_prob_</span></code>). Kata dengan nilai tertinggi pada suatu kelas adalah kata yang paling kuat mencirikan kelas tersebut. Tahap ini membantu memeriksa apakah model belajar dari kata yang masuk akal (misalnya kata bertema olahraga untuk <code class="docutils literal notranslate"><span class="pre">sport</span></code> dan kata bertema ekonomi untuk <code class="docutils literal notranslate"><span class="pre">finance</span></code>).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">feature_names</span> <span class="o">=</span> <span class="n">tfidf_nb</span><span class="o">.</span><span class="n">get_feature_names_out</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">kelas</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">nb_model</span><span class="o">.</span><span class="n">classes_</span><span class="p">):</span>
+    <span class="n">top_idx</span> <span class="o">=</span> <span class="n">nb_model</span><span class="o">.</span><span class="n">feature_log_prob_</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">argsort</span><span class="p">()[::</span><span class="o">-</span><span class="mi">1</span><span class="p">][:</span><span class="mi">10</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;10 kata teratas untuk kelas &#39;</span><span class="si">{</span><span class="n">kelas</span><span class="si">}</span><span class="s2">&#39;:&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  &quot;</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="n">feature_names</span><span class="p">[</span><span class="n">top_idx</span><span class="p">]))</span>
+    <span class="nb">print</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10 kata teratas untuk kelas &#39;finance&#39;:
+   [&#39;purbaya&#39;, &#39;rp&#39;, &#39;bandara&#39;, &#39;sebut&#39;, &#39;harga&#39;, &#39;uang&#39;, &#39;usaha&#39;, &#39;jadi&#39;, &#39;laku&#39;, &#39;perintah&#39;]
+
+10 kata teratas untuk kelas &#39;sport&#39;:
+   [&#39;inter&#39;, &#39;menang&#39;, &#39;liga&#39;, &#39;balap&#39;, &#39;madrid&#39;, &#39;main&#39;, &#39;tim&#39;, &#39;motogp&#39;, &#39;jadi&#39;, &#39;indonesia&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="contoh-prediksi-pada-data-uji">
+<h3>5.6 Contoh Prediksi pada Data Uji<a class="headerlink" href="#contoh-prediksi-pada-data-uji" title="Link to this heading">#</a></h3>
+<p>Membandingkan label sebenarnya dengan label hasil prediksi beserta probabilitas keyakinan model pada beberapa dokumen data uji.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">proba</span> <span class="o">=</span> <span class="n">nb_model</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+
+<span class="n">df_hasil</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s1">&#39;label_asli&#39;</span><span class="p">:</span> <span class="n">y_test</span><span class="o">.</span><span class="n">values</span><span class="p">,</span>
+    <span class="s1">&#39;label_prediksi&#39;</span><span class="p">:</span> <span class="n">y_pred</span><span class="p">,</span>
+    <span class="sa">f</span><span class="s1">&#39;proba_</span><span class="si">{</span><span class="n">nb_model</span><span class="o">.</span><span class="n">classes_</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">:</span> <span class="n">proba</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">4</span><span class="p">),</span>
+    <span class="sa">f</span><span class="s1">&#39;proba_</span><span class="si">{</span><span class="n">nb_model</span><span class="o">.</span><span class="n">classes_</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">:</span> <span class="n">proba</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">4</span><span class="p">),</span>
+<span class="p">})</span>
+<span class="n">df_hasil</span><span class="p">[</span><span class="s1">&#39;benar&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_hasil</span><span class="p">[</span><span class="s1">&#39;label_asli&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">df_hasil</span><span class="p">[</span><span class="s1">&#39;label_prediksi&#39;</span><span class="p">]</span>
+
+<span class="n">df_hasil</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>label_asli</th>
+      <th>label_prediksi</th>
+      <th>proba_finance</th>
+      <th>proba_sport</th>
+      <th>benar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>finance</td>
+      <td>finance</td>
+      <td>0.9309</td>
+      <td>0.0691</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>sport</td>
+      <td>sport</td>
+      <td>0.0432</td>
+      <td>0.9568</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>sport</td>
+      <td>sport</td>
+      <td>0.0519</td>
+      <td>0.9481</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>sport</td>
+      <td>sport</td>
+      <td>0.1401</td>
+      <td>0.8599</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>finance</td>
+      <td>finance</td>
+      <td>0.8098</td>
+      <td>0.1902</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>sport</td>
+      <td>sport</td>
+      <td>0.0534</td>
+      <td>0.9466</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>finance</td>
+      <td>finance</td>
+      <td>0.9111</td>
+      <td>0.0889</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>sport</td>
+      <td>sport</td>
+      <td>0.2518</td>
+      <td>0.7482</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>sport</td>
+      <td>sport</td>
+      <td>0.1653</td>
+      <td>0.8347</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>finance</td>
+      <td>finance</td>
+      <td>0.9169</td>
+      <td>0.0831</td>
+      <td>True</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="validasi-silang-cross-validation">
+<h3>5.7 Validasi Silang (Cross-Validation)<a class="headerlink" href="#validasi-silang-cross-validation" title="Link to this heading">#</a></h3>
+<p>Dengan jumlah dokumen yang relatif sedikit, hasil dari satu kali pembagian data latih dan uji bisa kebetulan terlalu bagus atau terlalu jelek. Karena itu dilakukan <strong>5-fold stratified cross-validation</strong> untuk mendapatkan estimasi performa yang lebih stabil. <code class="docutils literal notranslate"><span class="pre">Pipeline</span></code> digunakan supaya TF-IDF dihitung ulang hanya dari data latih pada setiap fold.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.pipeline</span><span class="w"> </span><span class="kn">import</span> <span class="n">Pipeline</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.model_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">StratifiedKFold</span><span class="p">,</span> <span class="n">cross_val_score</span>
+
+<span class="n">pipeline_nb</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">([</span>
+    <span class="p">(</span><span class="s1">&#39;tfidf&#39;</span><span class="p">,</span> <span class="n">TfidfVectorizer</span><span class="p">()),</span>
+    <span class="p">(</span><span class="s1">&#39;nb&#39;</span><span class="p">,</span> <span class="n">MultinomialNB</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mf">1.0</span><span class="p">))</span>
+<span class="p">])</span>
+
+<span class="n">skf</span> <span class="o">=</span> <span class="n">StratifiedKFold</span><span class="p">(</span><span class="n">n_splits</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">cv_scores</span> <span class="o">=</span> <span class="n">cross_val_score</span><span class="p">(</span><span class="n">pipeline_nb</span><span class="p">,</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;final_text&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;label&#39;</span><span class="p">],</span> <span class="n">cv</span><span class="o">=</span><span class="n">skf</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="s1">&#39;accuracy&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Accuracy tiap fold:&quot;</span><span class="p">,</span> <span class="n">cv_scores</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Rata-rata accuracy : </span><span class="si">{</span><span class="n">cv_scores</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Standar deviasi    : </span><span class="si">{</span><span class="n">cv_scores</span><span class="o">.</span><span class="n">std</span><span class="p">()</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Accuracy tiap fold: [1. 1. 1. 1. 1.]
+Rata-rata accuracy : 1.0000
+Standar deviasi    : 0.0000
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -2780,6 +3103,16 @@ Lokasi: c:\Users\acer\OneDrive\Documents\DOKUMEN KULIAH\Semester 7\ppw\hasil_pca
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pembuatan-tabel-4-principal-component-analysis-pca">4. Pembuatan Tabel 4: Principal Component Analysis (PCA)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi-sebaran-dokumen-pc1-vs-pc2">Visualisasi Sebaran Dokumen (PC1 vs PC2)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#perbandingan-jumlah-kolom-sebelum-dan-sesudah-pca">Perbandingan Jumlah Kolom Sebelum dan Sesudah PCA</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pemodelan-klasifikasi-naive-bayes-tf-idf">5. Pemodelan Klasifikasi Naive Bayes (TF-IDF)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pembagian-data-latih-dan-data-uji">5.1 Pembagian Data Latih dan Data Uji</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#representasi-tf-idf-untuk-data-latih-dan-data-uji">5.2 Representasi TF-IDF untuk Data Latih dan Data Uji</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#training-model-multinomial-naive-bayes">5.3 Training Model Multinomial Naive Bayes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluasi-model">5.4 Evaluasi Model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kata-paling-berpengaruh-pada-tiap-kelas">5.5 Kata Paling Berpengaruh pada Tiap Kelas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-prediksi-pada-data-uji">5.6 Contoh Prediksi pada Data Uji</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#validasi-silang-cross-validation">5.7 Validasi Silang (Cross-Validation)</a></li>
 </ul>
 </li>
 </ul>
