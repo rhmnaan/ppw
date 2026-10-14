@@ -1,0 +1,20 @@
+/* Paksa area konten ikut tema gelap */
+html[data-theme="dark"] body,
+html[data-theme="dark"] .bd-main,
+html[data-theme="dark"] .bd-content,
+html[data-theme="dark"] .bd-article-container,
+html[data-theme="dark"] .bd-article {
+  background-color: var(--pst-color-background) !important;
+  color: var(--pst-color-text-base) !important;
+}
+
+html[data-theme="dark"] .bd-article p,
+html[data-theme="dark"] .bd-article li,
+html[data-theme="dark"] .bd-article td,
+html[data-theme="dark"] .bd-article th {
+  color: var(--pst-color-text-base) !important;
+}
+
+html[data-theme="dark"] .bd-article table {
+  background-color: transparent !important;
+}
